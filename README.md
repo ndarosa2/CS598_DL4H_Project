@@ -109,13 +109,6 @@ That creates prepared_data.npz
 
 Run the model for diagnoses prediction using a feed forward network
 python 02_FFN_diagprediction.py --inputdata=prepared_data.npz --nEpochs=50 --kFold=1 
- 	2. 
-	* Selection Criteria
-		* Compilable and Executable - **Yes, with older version of mvn**
-		* Popularity - **3.9k stars**
-		* Actively Maintained - **Yes, last commit was on Oct 17th 2021**
-		* Open Github Issues - **15 open issues**
-		* Contributing Guidelines - **https://github.com/stleary/JSON-java/blob/master/docs/CONTRIBUTING.md**
 
 References
 ------------
