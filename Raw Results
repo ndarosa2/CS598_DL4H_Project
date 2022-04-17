@@ -1,4 +1,4 @@
-# Diagnoses Prediction - TUI: Alpha, Threshold:0.9, CCI Only, Numbrt of Epochs:5000, kFolds:1  
+# Diagnoses Prediction - TUI: Alpha, Threshold:0.9, CCI Only, Number of Epochs:5000, kFolds:1  
 Train Epoch: 4999 [0/9742 (0%)]	Loss: 
 tensor(0.1034, device='cuda:0')
 Train Epoch: 4999 [200/9742 (2%)]	Loss: 
