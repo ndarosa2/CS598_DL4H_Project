@@ -25,7 +25,8 @@ Github link: https://github.com/JamilProg/patient\_trajectory\_prediction
 Reproduction Steps
 ------------
 
- * Project 1: [JSON][JSON]
+The original paper's README.md provides reproduction steps; however, more detailed steps along with possible necesary troubleshooting and additional needed packages that are not listed in the original paper's README.md are provided below: 
+ * Environment
 	* Selection Criteria
 		* Compilable and Executable - **Yes, with older version of mvn**
 		* Popularity - **3.9k stars**
@@ -33,7 +34,13 @@ Reproduction Steps
 		* Open Github Issues - **15 open issues**
 		* Contributing Guidelines - **https://github.com/stleary/JSON-java/blob/master/docs/CONTRIBUTING.md**
 
-
+ * Project 1: [JSON][JSON]
+	* Selection Criteria
+		* Compilable and Executable - **Yes, with older version of mvn**
+		* Popularity - **3.9k stars**
+		* Actively Maintained - **Yes, last commit was on Oct 17th 2021**
+		* Open Github Issues - **15 open issues**
+		* Contributing Guidelines - **https://github.com/stleary/JSON-java/blob/master/docs/CONTRIBUTING.md**
 
 References
 ------------
