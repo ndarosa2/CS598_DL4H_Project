@@ -27,12 +27,18 @@ Reproduction Steps
 
 The original paper's README.md provides reproduction steps; however, more detailed steps along with possible necesary troubleshooting and additional needed packages that are not listed in the original paper's README.md are provided below: 
  * Environment
-	* Selection Criteria
-		* Compilable and Executable - **Yes, with older version of mvn**
-		* Popularity - **3.9k stars**
-		* Actively Maintained - **Yes, last commit was on Oct 17th 2021**
-		* Open Github Issues - **15 open issues**
-		* Contributing Guidelines - **https://github.com/stleary/JSON-java/blob/master/docs/CONTRIBUTING.md**
+ 	* Python 3.7
+ 	* Cuda version 10.2
+ 		* If Cuda is not used to accelerate training, then the Pytorch scripts need to be edited.
+ 	* PyTorch version 1.5.0
+	* spaCy
+	* dill
+	* Pytorch
+	* nltk
+	* cuda / cudatoolkit
+	* scikitlearn
+	* matplotlib
+
 
  * Project 1: [JSON][JSON]
 	* Selection Criteria
