@@ -112,7 +112,7 @@ Recall@20: 0.5653268112859776
 Recall@30: 0.6794980859208847
 
 
-# Diagnoses Prediction - TUI: Beta, Threshold:0.9, CCI Only, Number of Epochs:5000, kFolds:1
+# Diagnoses Prediction - TUI: Beta, Threshold:0.9, CCI Only, Number of Epochs:5000, kFolds:1 RUN 1
 Train Epoch: 4999 [5000/9742 (51%)]	Loss: 
 tensor(0.0918, device='cuda:0')
 Train Epoch: 4999 [5200/9742 (53%)]	Loss: 
