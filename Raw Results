@@ -181,12 +181,6 @@ Total Parameters: 235330269 # addition to original code
 
 ----------GRU-------------
 # GRU - TUI: Beta, Threshold:0.9, CCI+CCS Only, Number of Epochs:1500, kFolds:1 RUN 1
-Train Epoch: 1499 [1000/1136 (88%)]	Loss: 
-tensor(7.2460e-09, device='cuda:0')
-Train Epoch: 1499 [1020/1136 (89%)]	Loss: 
-tensor(1.3323e-08, device='cuda:0')
-Train Epoch: 1499 [1040/1136 (91%)]	Loss: 
-tensor(1.4726e-08, device='cuda:0')
 Train Epoch: 1499 [1060/1136 (93%)]	Loss: 
 tensor(1.9985e-08, device='cuda:0')
 Train Epoch: 1499 [1080/1136 (95%)]	Loss: 
@@ -201,5 +195,17 @@ AUC_scores:  [0.9195400204111386]
 Mean:  0.9195400204111386
 
 # GRU - TUI: Beta, Threshold:0.9, CCI+CCS Only, Number of Epochs:1500, kFolds:1 RUN 2
+Train Epoch: 1499 [1060/1136 (93%)]	Loss: 
+tensor(3.5062e-10, device='cuda:0')
+Train Epoch: 1499 [1080/1136 (95%)]	Loss: 
+tensor(0., device='cuda:0')
+Train Epoch: 1499 [1100/1136 (96%)]	Loss: 
+tensor(4.1489e-08, device='cuda:0')
+Train Epoch: 1499 [1120/1136 (98%)]	Loss: 
+tensor(0., device='cuda:0')
+Training done - deleting variables and starting test
+ROC Average Score: 0.9303092611862642
+AUC_scores:  [0.9303092611862642]
+Mean:  0.9303092611862642
 
-
+# GRU - TUI: Beta, Threshold:0.9, CCI+CCS Only, Number of Epochs:1500, kFolds:1 RUN 3
