@@ -179,7 +179,7 @@ Total Parameters: 235330269 # addition to original code
 
 --------------------------------------------MORTALITY PREDICTION----------------------------------------------------------
 
-----------GRU-------------
+----------GRU CCI+CCS-------------
 # GRU - TUI: Beta, Threshold:0.9, CCI+CCS Only, Number of Epochs:1500, kFolds:1 RUN 1
 Train Epoch: 1499 [1060/1136 (93%)]	Loss: 
 tensor(1.9985e-08, device='cuda:0')
@@ -249,3 +249,8 @@ Training done - deleting variables and starting test
 ROC Average Score: 0.9352672281536679
 AUC_scores:  [0.9352672281536679]
 Mean:  0.9352672281536679
+
+MEAN AUC_ROC for the 5 Runs = 0.926577
+
+----------GRU CCI Only-------------
+# GRU - TUI: Beta, Threshold:0.9, CCI Only, Number of Epochs:1500, kFolds:1 RUN 1
