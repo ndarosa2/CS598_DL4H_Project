@@ -209,3 +209,15 @@ AUC_scores:  [0.9303092611862642]
 Mean:  0.9303092611862642
 
 # GRU - TUI: Beta, Threshold:0.9, CCI+CCS Only, Number of Epochs:1500, kFolds:1 RUN 3
+Train Epoch: 1499 [1060/1136 (93%)]	Loss: 
+tensor(0., device='cuda:0')
+Train Epoch: 1499 [1080/1136 (95%)]	Loss: 
+tensor(1.1570e-08, device='cuda:0')
+Train Epoch: 1499 [1100/1136 (96%)]	Loss: 
+tensor(1.1687e-10, device='cuda:0')
+Train Epoch: 1499 [1120/1136 (98%)]	Loss: 
+tensor(8.1810e-09, device='cuda:0')
+Training done - deleting variables and starting test
+ROC Average Score: 0.9153804687499999
+AUC_scores:  [0.9153804687499999]
+Mean:  0.9153804687499999
