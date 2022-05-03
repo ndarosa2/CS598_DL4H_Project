@@ -177,6 +177,24 @@ Recall@30: 0.6891833964420947
 AUROC: 0.9113469880422574
 Total Parameters: 235330269 # addition to original code 
 
+--------------GRU CCI Only----------------------
+# GRU Training - TUI: Beta, Threshold:0.9, CCI Only, Number of Epochs:1500, kFolds:1 RUN 1 --- Produces model_ouput.pt, X-test.data, and Y-test.data
+Train Epoch: 1499 [6460/6583 (98%)]	Loss: 
+tensor(0.0025, device='cuda:0')
+Train Epoch: 1499 [6480/6583 (98%)]	Loss: 
+tensor(0.0040, device='cuda:0')
+Train Epoch: 1499 [6500/6583 (99%)]	Loss: 
+tensor(0.0050, device='cuda:0')
+Train Epoch: 1499 [6520/6583 (99%)]	Loss: 
+tensor(0.0043, device='cuda:0')
+Train Epoch: 1499 [6540/6583 (99%)]	Loss: 
+tensor(0.0056, device='cuda:0')
+Train Epoch: 1499 [6560/6583 (100%)]	Loss: 
+tensor(0.0038, device='cuda:0')
+
+# GRU Testing - TUI: Beta, Threshold:0.9, CCI Only
+
+
 --------------------------------------------MORTALITY PREDICTION----------------------------------------------------------
 
 ----------GRU CCI+CCS-------------
