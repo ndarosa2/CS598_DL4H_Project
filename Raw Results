@@ -1,5 +1,5 @@
 ----------------------------------------------DIAGNOSES PREDICTION------------------------------------
------------------------------------------------------FFN CUI Only------------------------------
+----------------------FFN CUI Only------------------------------
 # Diagnoses Prediction - TUI: Beta, Threshold:0.9, CUI Only, Number of Epochs:5000, kFolds:5  
 python 02_FFN_diagprediction.py --inputdata=diag_prepared_data_beta_09.npz --nEpochs=5000 --kFold=5
 
@@ -26,7 +26,9 @@ Recall@20: 0.5750367504244823
 Recall@30: 0.6882901989119966
 AUROC: 0.9108270099497991
 235330269
-
+---------------------FFN CUI + CCS ------------------------------
+# Diagnoses Prediction - TUI: Beta, Threshold:0.9, CUI+CCS, Number of Epochs:5000, kFolds:5  
+python 02_FFN_diagprediction.py --inputdata=diag_prepared_data_beta_09.npz --nEpochs=5000 --kFold=5 --withCCS=1
 
 # Diagnoses Prediction - TUI: Alpha, Threshold:0.9, CUI Only, Number of Epochs:5000, kFolds:1  
 Train Epoch: 4999 [0/9742 (0%)]	Loss: 
