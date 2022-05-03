@@ -1,4 +1,6 @@
-# Diagnoses Prediction - TUI: Alpha, Threshold:0.9, CCI Only, Number of Epochs:5000, kFolds:1  
+----------------------------------------------DIAGNOSES PREDICTION------------------------------------
+-----------------------------------------------------FFN CUI Only------------------------------
+# Diagnoses Prediction - TUI: Alpha, Threshold:0.9, CUI Only, Number of Epochs:5000, kFolds:1  
 Train Epoch: 4999 [0/9742 (0%)]	Loss: 
 tensor(0.1034, device='cuda:0')
 Train Epoch: 4999 [200/9742 (2%)]	Loss: 
@@ -177,8 +179,8 @@ Recall@30: 0.6891833964420947
 AUROC: 0.9113469880422574
 Total Parameters: 235330269 # addition to original code 
 
---------------GRU CCI Only----------------------
-# GRU Training - TUI: Beta, Threshold:0.9, CCI Only, Number of Epochs:1500, kFolds:1 RUN 1 --- Produces model_ouput.pt, X-test.data, and Y-test.data
+--------------GRU CUI Only----------------------
+# GRU Training - TUI: Beta, Threshold:0.9, CUI Only, Number of Epochs:1500, kFolds:1 RUN 1 --- Produces model_ouput.pt, X-test.data, and Y-test.data
 Train Epoch: 1499 [6460/6583 (98%)]	Loss: 
 tensor(0.0025, device='cuda:0')
 Train Epoch: 1499 [6480/6583 (98%)]	Loss: 
@@ -192,13 +194,25 @@ tensor(0.0056, device='cuda:0')
 Train Epoch: 1499 [6560/6583 (100%)]	Loss: 
 tensor(0.0038, device='cuda:0')
 
-# GRU Testing - TUI: Beta, Threshold:0.9, CCI Only
+# GRU Testing - TUI: Beta, Threshold:0.9, CUI Only
+python 03_GRU_test.py --Xinputdata=X-test.data --Yinputdata=Y-test.data --inputModel=model_output.pt
+Dataset with : 731 patients. Y: 731
+Each patient has : 41 admissions. Y: 41
+X_dataset_shape= torch.Size([731, 41, 23263])
+Y_dataset_shape= torch.Size([731, 41, 269])
+P@ 1 = 0.4661087866108787
+P@ 2 = 0.44184100418410044
+P@ 3 = 0.4256624825662483
+R@ 10 = 0.2585400425230333
+R@ 20 = 0.4107016300496102
+R@ 30 = 0.5265768958185684
+ROC Average Score: 0.8565521275530967
 
 
 --------------------------------------------MORTALITY PREDICTION----------------------------------------------------------
 
 ----------GRU CCI+CCS-------------
-# GRU - TUI: Beta, Threshold:0.9, CCI+CCS Only, Number of Epochs:1500, kFolds:1 RUN 1
+# GRU - TUI: Beta, Threshold:0.9, CUI+CCS Only, Number of Epochs:1500, kFolds:1 RUN 1
 Train Epoch: 1499 [1060/1136 (93%)]	Loss: 
 tensor(1.9985e-08, device='cuda:0')
 Train Epoch: 1499 [1080/1136 (95%)]	Loss: 
@@ -212,7 +226,7 @@ ROC Average Score: 0.9195400204111386
 AUC_scores:  [0.9195400204111386]
 Mean:  0.9195400204111386
 
-# GRU - TUI: Beta, Threshold:0.9, CCI+CCS Only, Number of Epochs:1500, kFolds:1 RUN 2
+# GRU - TUI: Beta, Threshold:0.9, CUI+CCS Only, Number of Epochs:1500, kFolds:1 RUN 2
 Train Epoch: 1499 [1060/1136 (93%)]	Loss: 
 tensor(3.5062e-10, device='cuda:0')
 Train Epoch: 1499 [1080/1136 (95%)]	Loss: 
@@ -226,7 +240,7 @@ ROC Average Score: 0.9303092611862642
 AUC_scores:  [0.9303092611862642]
 Mean:  0.9303092611862642
 
-# GRU - TUI: Beta, Threshold:0.9, CCI+CCS Only, Number of Epochs:1500, kFolds:1 RUN 3
+# GRU - TUI: Beta, Threshold:0.9, CUI+CCS Only, Number of Epochs:1500, kFolds:1 RUN 3
 Train Epoch: 1499 [1060/1136 (93%)]	Loss: 
 tensor(0., device='cuda:0')
 Train Epoch: 1499 [1080/1136 (95%)]	Loss: 
@@ -240,7 +254,7 @@ ROC Average Score: 0.9153804687499999
 AUC_scores:  [0.9153804687499999]
 Mean:  0.9153804687499999
 
-# GRU - TUI: Beta, Threshold:0.9, CCI+CCS Only, Number of Epochs:1500, kFolds:1 RUN 4
+# GRU - TUI: Beta, Threshold:0.9, CUI+CCS Only, Number of Epochs:1500, kFolds:1 RUN 4
 Train Epoch: 1499 [1060/1136 (93%)]	Loss: 
 tensor(1.0518e-08, device='cuda:0')
 Train Epoch: 1499 [1080/1136 (95%)]	Loss: 
@@ -254,7 +268,7 @@ ROC Average Score: 0.9323920231954524
 AUC_scores:  [0.9323920231954524]
 Mean:  0.9323920231954524
 
-# GRU - TUI: Beta, Threshold:0.9, CCI+CCS Only, Number of Epochs:1500, kFolds:1 RUN 5
+# GRU - TUI: Beta, Threshold:0.9, CUI+CCS Only, Number of Epochs:1500, kFolds:1 RUN 5
 Train Epoch: 1499 [1060/1136 (93%)]	Loss: 
 tensor(0.0005, device='cuda:0')
 Train Epoch: 1499 [1080/1136 (95%)]	Loss: 
@@ -271,4 +285,4 @@ Mean:  0.9352672281536679
 MEAN AUC_ROC for the 5 Runs = 0.926577
 
 ----------GRU CCI Only-------------
-# GRU - TUI: Beta, Threshold:0.9, CCI Only, Number of Epochs:1500, kFolds:1 RUN 1
+# GRU - TUI: Beta, Threshold:0.9, CUI Only, Number of Epochs:1500, kFolds:1 RUN 1
