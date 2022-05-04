@@ -234,6 +234,45 @@ real	0m32.266s
 user	1m45.867s
 sys	0m17.094s
 
+--------------GRU CUI + CCS----------------------
+# GRU Training Run 1 - TUI: Beta, Threshold:0.9, CUI+CCS, Number of Epochs:1500, kFolds:1 RUN 1 --- Produces model_ouput.pt, X-test.data, and Y-test.data
+time python 02_GRU_train_GPU.py --inputdata=diag_prepared_data_beta_09.npz --nEpochs=1500 --withCCS=1
+
+tensor(0.0023, device='cuda:0')
+Train Epoch: 1499 [6500/6583 (99%)]	Loss: 
+tensor(0.0022, device='cuda:0')
+Train Epoch: 1499 [6520/6583 (99%)]	Loss: 
+tensor(0.0040, device='cuda:0')
+Train Epoch: 1499 [6540/6583 (99%)]	Loss: 
+tensor(0.0048, device='cuda:0')
+Train Epoch: 1499 [6560/6583 (100%)]	Loss: 
+tensor(0.0035, device='cuda:0')
+
+real	89m55.342s
+user	88m55.694s
+sys	0m32.963s
+
+
+# GRU Testing Run 1- TUI: Beta, Threshold:0.9, CUI + CCS
+time python 03_GRU_test.py --Xinputdata=X-test.data --Yinputdata=Y-test.data --inputModel=model_output.pt
+
+Dataset with : 731 patients. Y: 731
+Each patient has : 41 admissions. Y: 41
+X_dataset_shape= torch.Size([731, 41, 23532])
+Y_dataset_shape= torch.Size([731, 41, 269])
+P@ 1 = 0.5129533678756477
+P@ 2 = 0.5056131260794473
+P@ 3 = 0.47294185377086934
+R@ 10 = 0.30657662497122246
+R@ 20 = 0.467807535875988
+R@ 30 = 0.5778528125239812
+ROC Average Score: 0.8750478227469088
+Total Number of Parameters: 14294469
+
+real	0m31.629s
+user	1m42.713s
+sys	0m17.162s
+
 
 
 --------------------------------------------MORTALITY PREDICTION----------------------------------------------------------
