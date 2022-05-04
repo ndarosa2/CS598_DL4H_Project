@@ -104,6 +104,68 @@ Recall@30: 0.7062955259518934
 AUROC: 0.9161035637835443
 238020269
 
+---------------------FFN CCS Only ------------------------------
+# Diagnoses Prediction - TUI: Beta, Threshold:0.9, CCS Only, Number of Epochs:5000, kFolds:5  
+time python 02_FFN_diagprediction_CCS_Only.py --inputdata=diag_prepared_data_beta_09.npz --nEpochs=5000 --kFold=5 --withCCS=1
+
+Train Epoch: 4999 [9000/9743 (92%)]	Loss: 
+tensor(0.1214, device='cuda:0')
+Train Epoch: 4999 [9200/9743 (94%)]	Loss: 
+tensor(0.1103, device='cuda:0')
+Train Epoch: 4999 [9400/9743 (96%)]	Loss: 
+tensor(0.1157, device='cuda:0')
+Train Epoch: 4999 [9600/9743 (98%)]	Loss: 
+tensor(0.1186, device='cuda:0')
+/home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/PyTorch_scripts/diagnoses_prediction/02_FFN_diagprediction_CCS_Only.py:225: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  data, target = Variable(data, volatile=True), Variable(target, volatile=True)
+Scores for each fold:
+Precision: [[0.7327586206896551, 0.6945812807881774, 0.6518883415435139], [0.7249589490968801, 0.6791871921182266, 0.6328680897646415], [0.7261904761904762, 0.6890394088669951, 0.6522988505747126], [0.7383983572895277, 0.6963039014373716, 0.6553045859000685], [0.7182751540041068, 0.6897330595482546, 0.6440793976728268]]
+Recall: [[0.3986402306624426, 0.5774748157904104, 0.6844409639411954], [0.39522565405676247, 0.5732436204860242, 0.6785369170752658], [0.3949049031582621, 0.5663235037515267, 0.6698307450706683], [0.3942257217847769, 0.5675940507436571, 0.6726859142607174], [0.3988420481273747, 0.5714492491405826, 0.6774742174778361]]
+AUROC: [0.9088881686881376, 0.9072882712607829, 0.9050343657924604, 0.904730204614692, 0.9064493820017542]
+Average scores:
+Precision@1: 0.7281163114541291
+Precision@2: 0.6897689685518051
+Precision@3: 0.6472878530911527
+Recall@10: 0.3963677115579237
+Recall@20: 0.5712170479824402
+Recall@30: 0.6765937515651366
+AUROC: 0.9064780784715655
+Total Number of Parameters: 5390269
+
+real	45m41.929s
+user	45m21.199s
+sys	0m29.970s
+
+# Diagnoses Prediction - TUI: Beta, Threshold:0.9, CCS Only, Number of Epochs:2000, kFolds:5  
+time python 02_FFN_diagprediction_CCS_Only.py --inputdata=diag_prepared_data_beta_09.npz --nEpochs=2000 --kFold=5 --withCCS=1 --hiddenDimSize=2000
+Train Epoch: 1999 [9000/9743 (92%)]	Loss: 
+tensor(0.1267, device='cuda:0')
+Train Epoch: 1999 [9200/9743 (94%)]	Loss: 
+tensor(0.1255, device='cuda:0')
+Train Epoch: 1999 [9400/9743 (96%)]	Loss: 
+tensor(0.1330, device='cuda:0')
+Train Epoch: 1999 [9600/9743 (98%)]	Loss: 
+tensor(0.1287, device='cuda:0')
+/home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/PyTorch_scripts/diagnoses_prediction/02_FFN_diagprediction_CCS_Only.py:225: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  data, target = Variable(data, volatile=True), Variable(target, volatile=True)
+Scores for each fold:
+Precision: [[0.6658456486042693, 0.6268472906403941, 0.5972906403940886], [0.6732348111658456, 0.6342364532019704, 0.6000273672687466], [0.6798029556650246, 0.6389573070607554, 0.5978379857690203], [0.6759753593429159, 0.6492813141683779, 0.6113620807665983], [0.675564681724846, 0.6484599589322382, 0.6053388090349076]]
+Recall: [[0.37154551052193124, 0.5375058857618893, 0.6443188815241406], [0.36584505800627665, 0.5309778200923869, 0.6382453542085404], [0.3652557319223986, 0.5332275132275133, 0.6366490299823633], [0.3684005109281862, 0.5334941810956572, 0.6400085154697701], [0.36711624467373316, 0.5344226502799592, 0.641652287213438]]
+AUROC: [0.8890221287277787, 0.8893120423483343, 0.8857164859745833, 0.8891513553033268, 0.8886534218350548]
+Average scores:
+Precision@1: 0.6740846913005802
+Precision@2: 0.6395564648007472
+Precision@3: 0.6023713766466723
+Recall@10: 0.36763261121050517
+Recall@20: 0.5339256100914811
+Recall@30: 0.6401748136796506
+AUROC: 0.8883710868378156
+Total Number of Parameters: 1078269
+
+real	18m55.843s
+user	18m45.794s
+sys	0m13.271s
+
 
 --------------GRU CUI Only----------------------
 # GRU Training - TUI: Beta, Threshold:0.9, CUI Only, Number of Epochs:1500, kFolds:1 RUN 1 --- Produces model_ouput.pt, X-test.data, and Y-test.data
