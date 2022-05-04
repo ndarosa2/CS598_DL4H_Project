@@ -168,7 +168,9 @@ sys	0m13.271s
 
 
 --------------GRU CUI Only----------------------
-# GRU Training - TUI: Beta, Threshold:0.9, CUI Only, Number of Epochs:1500, kFolds:1 RUN 1 --- Produces model_ouput.pt, X-test.data, and Y-test.data
+# GRU Training Run 1 - TUI: Beta, Threshold:0.9, CUI Only, Number of Epochs:1500, kFolds:1 RUN 1 --- Produces model_ouput.pt, X-test.data, and Y-test.data
+time python 02_GRU_train_GPU.py --inputdata=diag_prepared_data_beta_09.npz --nEpochs=1500
+
 Train Epoch: 1499 [6460/6583 (98%)]	Loss: 
 tensor(0.0025, device='cuda:0')
 Train Epoch: 1499 [6480/6583 (98%)]	Loss: 
@@ -182,7 +184,7 @@ tensor(0.0056, device='cuda:0')
 Train Epoch: 1499 [6560/6583 (100%)]	Loss: 
 tensor(0.0038, device='cuda:0')
 
-# GRU Testing - TUI: Beta, Threshold:0.9, CUI Only
+# GRU Testing Run 1- TUI: Beta, Threshold:0.9, CUI Only
 python 03_GRU_test.py --Xinputdata=X-test.data --Yinputdata=Y-test.data --inputModel=model_output.pt
 Dataset with : 731 patients. Y: 731
 Each patient has : 41 admissions. Y: 41
@@ -195,6 +197,43 @@ R@ 10 = 0.2585400425230333
 R@ 20 = 0.4107016300496102
 R@ 30 = 0.5265768958185684
 ROC Average Score: 0.8565521275530967
+
+# GRU Training Run 2 - TUI: Beta, Threshold:0.9, CUI Only, Number of Epochs:1500, kFolds:1 RUN 1 --- Produces model_ouput.pt, X-test.data, and Y-test.data
+time python 02_GRU_train_GPU.py --inputdata=diag_prepared_data_beta_09.npz --nEpochs=1500
+
+Train Epoch: 1499 [6500/6583 (99%)]	Loss: 
+tensor(0.0048, device='cuda:0')
+Train Epoch: 1499 [6520/6583 (99%)]	Loss: 
+tensor(0.0039, device='cuda:0')
+Train Epoch: 1499 [6540/6583 (99%)]	Loss: 
+tensor(0.0055, device='cuda:0')
+Train Epoch: 1499 [6560/6583 (100%)]	Loss: 
+tensor(0.0037, device='cuda:0')
+
+real	102m43.360s
+user	101m43.584s
+sys	0m35.621s
+
+# GRU Testing Run 2- TUI: Beta, Threshold:0.9, CUI Only
+time python 03_GRU_test.py --Xinputdata=X-test.data --Yinputdata=Y-test.data --inputModel=model_output.pt
+
+Dataset with : 731 patients. Y: 731
+Each patient has : 41 admissions. Y: 41
+X_dataset_shape= torch.Size([731, 41, 23263])
+Y_dataset_shape= torch.Size([731, 41, 269])
+P@ 1 = 0.5248756218905473
+P@ 2 = 0.5004145936981758
+P@ 3 = 0.4640685461580984
+R@ 10 = 0.2880325993708893
+R@ 20 = 0.4493136974549614
+R@ 30 = 0.5647698026880184
+ROC Average Score: 0.8707874593103225
+Total Number of Parameters: 14133069
+
+real	0m32.266s
+user	1m45.867s
+sys	0m17.094s
+
 
 
 --------------------------------------------MORTALITY PREDICTION----------------------------------------------------------
