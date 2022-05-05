@@ -375,6 +375,29 @@ ROC Average Score: 0.8619478409377244
 
 --------------------------------------------MORTALITY PREDICTION----------------------------------------------------------
 
+----------FFN CCI+CCS-------------
+
+# FFN - TUI: Beta, Threshold:0.9, CUI+CCS, Number of Epochs:5000, kFolds:5, lr: 0.01. hiddenDimSize: 10000  RUN 1
+time python 02_FFN_mortality.py --inputdata=mort_prepared_data_beta_09.npz --inputdata2=mort_prepared_data_deathTime_beta_09.npz --nEpochs=5000 --kFold=5 --lr=0.01 --withCCS=1
+
+Train Epoch: 4999 [2400/3196 (75%)]	Loss: 
+tensor(1.9372e-05, device='cuda:0')
+Train Epoch: 4999 [2600/3196 (81%)]	Loss: 
+tensor(2.4637e-08, device='cuda:0')
+Train Epoch: 4999 [2800/3196 (88%)]	Loss: 
+tensor(0.0009, device='cuda:0')
+Train Epoch: 4999 [3000/3196 (94%)]	Loss: 
+tensor(0., device='cuda:0')
+Training done - deleting variables and starting test
+ROC Average Score: 0.8531294244881215
+AUC_scores:  [0.8314375827005528, 0.8232786974937577, 0.8730442774473227, 0.8252093806280808, 0.8531294244881215]
+Mean:  0.841219872551567
+Total Number of Parameters: 165680003
+
+real	308m12.443s
+user	307m35.239s
+sys	0m39.402s
+
 ----------GRU CCI+CCS-------------
 # GRU - TUI: Beta, Threshold:0.9, CUI+CCS Only, Number of Epochs:1500, kFolds:1 RUN 1
 Train Epoch: 1499 [1060/1136 (93%)]	Loss: 
@@ -450,3 +473,7 @@ MEAN AUC_ROC for the 5 Runs = 0.926577
 
 ----------GRU CCI Only-------------
 # GRU - TUI: Beta, Threshold:0.9, CUI Only, Number of Epochs:1500, kFolds:1 RUN 1
+
+
+
+--------------------------------------------READMISSION PREDICTION----------------------------------------------------------
