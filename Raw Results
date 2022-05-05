@@ -398,7 +398,30 @@ real	308m12.443s
 user	307m35.239s
 sys	0m39.402s
 
+# FFN - TUI: Beta, Threshold:0.9, CUI+CCS, Number of Epochs:100, kFolds:5, lr: 0.001. hiddenDimSize: 50 batchSize:50  RUN 1
+time python 02_FFN_mortality.py --inputdata=mort_prepared_data_beta_09.npz --inputdata2=mort_prepared_data_deathTime_beta_09.npz --hiddenDimSize=50 --batchSize=50 --nEpochs=100 --kFold=5 --lr=0.001 --withCCS=1
+Train Epoch: 99 [2800/3196 (88%)]	Loss: 
+tensor(0.0024, device='cuda:0')
+Train Epoch: 99 [2900/3196 (91%)]	Loss: 
+tensor(0.0004, device='cuda:0')
+Train Epoch: 99 [3000/3196 (94%)]	Loss: 
+tensor(0.0133, device='cuda:0')
+Train Epoch: 99 [3100/3196 (97%)]	Loss: 
+tensor(0.0024, device='cuda:0')
+Training done - deleting variables and starting test
+ROC Average Score: 0.8748534933415169
+AUC_scores:  [0.8567832490518595, 0.8704996191520703, 0.8538765236893111, 0.8542436397564585, 0.8748534933415169]
+Mean:  0.8620513049982431
+Total Number of Parameters: 828403
+
+real	0m53.462s
+user	0m51.854s
+sys	0m1.673s
+
+
 ----------GRU CCI+CCS-------------
+# GRU - TUI: Beta, Threshold:0.9, CUI+CCS Only, Number of Epochs:1500, kFolds:5
+
 # GRU - TUI: Beta, Threshold:0.9, CUI+CCS Only, Number of Epochs:1500, kFolds:1 RUN 1
 Train Epoch: 1499 [1060/1136 (93%)]	Loss: 
 tensor(1.9985e-08, device='cuda:0')
