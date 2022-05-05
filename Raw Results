@@ -504,6 +504,74 @@ MEAN AUC_ROC for the 5 Runs = 0.926577
 cd /home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/PyTorch_scripts/readmission_prediction
 time python 01_data_prep_readmission.py --admissions_file ADMISSIONS.csv --diagnoses_file DIAGNOSES_ICD.csv --notes_file post_processed_output_beta_09.csv
 
+-Number of valid admissions (the ones with, at least, one note): 58361
+Cleaning up admissions without notes
+-Number of admissions without notes: 589
+-Number of admissions after cleaning: 58361
+-Number of subjects after cleaning: 46445
+Building Map: hadm_id to set of ICD9 codes from DIAGNOSES_ICD
+-Number of null ICD9 codes in file DIAGNOSES_ICD.csv: 47
+-Number of valid admissions (at least one diagnosis): 58929
+Cleaning up admissions without diagnoses
+-Number of admissions without diagnosis: 29
+-Number of admissions after cleaning: 58929
+-Number of subjects without admissions: 0
+-Number of subjects after cleaning: 46445
+Building Map: subject_id to admission-ordered (admittime, Note) and cleaning one-admission-only patients
+-Number of discarded subjects with less than two admissions: 39131
+-Number of subjects after ordering: 7314
+Converting database CUI ids to sequential integer ids
+Converting database CCS ids to sequential integer ids
+Writing patients notes read from files post_processed_output_beta_09.csv
+-Final number of subjects notes for training: 7314
+-Final number of admissions for training: 19492
+
+real	0m43.244s
+user	0m42.670s
+sys	0m0.472s
+
+
 ------FFN CUI Only---------
-time python 02_FFN_readmission.py --inputdata=read_prepared_data_beta_09.npz --hiddenDimSize=10000 --batchSize=100 --nEpochs=5000 --kFold=5 --lr=0.001 --withCCS=0
+time python 02_FFN_readmission.py --inputdata=readmit_prepared_data_beta_09.npz --hiddenDimSize=10000 --batchSize=100 --nEpochs=5000 --kFold=5 --lr=0.001 --withCCS=0
+
+
+time python 02_FFN_readmission.py --inputdata=readmit_prepared_data_beta_09.npz --hiddenDimSize=50 --batchSize=100 --nEpochs=100 --kFold=5 --lr=0.001 --withCCS=0
+
+Run 1
+Train Epoch: 99 [9000/9743 (92%)]	Loss: 
+tensor(0.5836, device='cuda:0')
+Train Epoch: 99 [9200/9743 (94%)]	Loss: 
+tensor(0.5621, device='cuda:0')
+Train Epoch: 99 [9400/9743 (96%)]	Loss: 
+tensor(0.6028, device='cuda:0')
+Train Epoch: 99 [9600/9743 (98%)]	Loss: 
+tensor(0.5845, device='cuda:0')
+Training done - deleting variables and starting test
+ROC Average Score: 0.6964427411321774
+AUC_scores:  [0.7039787831739791, 0.7121999333087629, 0.7056896768515026, 0.7164455209308398, 0.6964427411321774]
+Mean:  0.7069513310794523
+Total Number of Parameters: 1176701
+
+real	2m11.615s
+user	2m7.520s
+sys	0m4.127s
+
+Run 2 
+Train Epoch: 99 [9000/9743 (92%)]	Loss: 
+tensor(0.5686, device='cuda:0')
+Train Epoch: 99 [9200/9743 (94%)]	Loss: 
+tensor(0.5924, device='cuda:0')
+Train Epoch: 99 [9400/9743 (96%)]	Loss: 
+tensor(0.5176, device='cuda:0')
+Train Epoch: 99 [9600/9743 (98%)]	Loss: 
+tensor(0.6275, device='cuda:0')
+Training done - deleting variables and starting test
+ROC Average Score: 0.7116626428723531
+AUC_scores:  [0.6993200577055831, 0.7025864941635687, 0.6931631854839833, 0.7216958858262943, 0.7116626428723531]
+Mean:  0.7056856532103565
+Total Number of Parameters: 1176701
+
+real	2m18.235s
+user	2m14.157s
+sys	0m4.064s
 
