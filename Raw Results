@@ -344,6 +344,34 @@ ROC Average Score: 0.8641561899702174
 # LSTM Training Run 2 - TUI: Beta, Threshold:0.9, CUI Only, Number of Epochs:1500, kFolds:1 RUN 2 --- Produces model_ouput.pt, X-test.data, and Y-test.data
 time python 02_LSTM_train_GPU.py --inputdata=diag_prepared_data_beta_09.npz --nEpochs=1500
 
+Train Epoch: 1499 [6500/6583 (99%)]	Loss: 
+tensor(0.0020, device='cuda:0')
+Train Epoch: 1499 [6520/6583 (99%)]	Loss: 
+tensor(0.0029, device='cuda:0')
+Train Epoch: 1499 [6540/6583 (99%)]	Loss: 
+tensor(0.0013, device='cuda:0')
+Train Epoch: 1499 [6560/6583 (100%)]	Loss: 
+tensor(0.0019, device='cuda:0')
+
+real	120m0.735s
+user	118m54.479s
+sys	0m36.295s
+
+# LSTM Testing Run 1- TUI: Beta, Threshold:0.9, CUI Only
+python 03_LSTM_test.py --Xinputdata=X-test.data --Yinputdata=Y-test.data --inputModel=model_output.pt
+
+Dataset with : 731 patients. Y: 731
+Each patient has : 41 admissions. Y: 41
+X_dataset_shape= torch.Size([731, 41, 23263])
+Y_dataset_shape= torch.Size([731, 41, 269])
+P@ 1 = 0.565180102915952
+P@ 2 = 0.5218696397941681
+P@ 3 = 0.489136649514008
+R@ 10 = 0.2961472110408281
+R@ 20 = 0.44918056354226565
+R@ 30 = 0.55556354226567
+ROC Average Score: 0.8619478409377244
+
 
 --------------------------------------------MORTALITY PREDICTION----------------------------------------------------------
 
