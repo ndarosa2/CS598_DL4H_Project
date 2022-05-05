@@ -341,6 +341,10 @@ R@ 20 = 0.4732298316889147
 R@ 30 = 0.579802669762043
 ROC Average Score: 0.8641561899702174
 
+# LSTM Training Run 2 - TUI: Beta, Threshold:0.9, CUI Only, Number of Epochs:1500, kFolds:1 RUN 2 --- Produces model_ouput.pt, X-test.data, and Y-test.data
+time python 02_LSTM_train_GPU.py --inputdata=diag_prepared_data_beta_09.npz --nEpochs=1500
+
+
 --------------------------------------------MORTALITY PREDICTION----------------------------------------------------------
 
 ----------GRU CCI+CCS-------------
