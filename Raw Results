@@ -500,3 +500,10 @@ MEAN AUC_ROC for the 5 Runs = 0.926577
 
 
 --------------------------------------------READMISSION PREDICTION----------------------------------------------------------
+----Prepare Data----
+cd /home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/PyTorch_scripts/readmission_prediction
+time python 01_data_prep_readmission.py --admissions_file ADMISSIONS.csv --diagnoses_file DIAGNOSES_ICD.csv --notes_file post_processed_output_beta_09.csv
+
+------FFN CUI Only---------
+time python 02_FFN_readmission.py --inputdata=read_prepared_data_beta_09.npz --hiddenDimSize=10000 --batchSize=100 --nEpochs=5000 --kFold=5 --lr=0.001 --withCCS=0
+
