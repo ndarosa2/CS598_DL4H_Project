@@ -534,6 +534,24 @@ sys	0m0.472s
 ------FFN CUI Only---------
 time python 02_FFN_readmission.py --inputdata=readmit_prepared_data_beta_09.npz --hiddenDimSize=10000 --batchSize=100 --nEpochs=5000 --kFold=5 --lr=0.001 --withCCS=0
 
+Train Epoch: 4999 [9000/9743 (92%)]	Loss: 
+tensor(0.0068, device='cuda:0')
+Train Epoch: 4999 [9200/9743 (94%)]	Loss: 
+tensor(0.0058, device='cuda:0')
+Train Epoch: 4999 [9400/9743 (96%)]	Loss: 
+tensor(0.0066, device='cuda:0')
+Train Epoch: 4999 [9600/9743 (98%)]	Loss: 
+tensor(0.0051, device='cuda:0')
+Training done - deleting variables and starting test
+ROC Average Score: 0.6763405273500283
+AUC_scores:  [0.6813096303262953, 0.6719815968416578, 0.6718583266639988, 0.6742224126032222, 0.6763405273500283]
+Mean:  0.6751424987570405
+Total Number of Parameters: 235340001
+
+real	546m41.783s
+user	545m46.538s
+sys	0m59.355s
+
 
 time python 02_FFN_readmission.py --inputdata=readmit_prepared_data_beta_09.npz --hiddenDimSize=50 --batchSize=100 --nEpochs=100 --kFold=5 --lr=0.001 --withCCS=0
 
