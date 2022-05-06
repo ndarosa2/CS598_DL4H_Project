@@ -593,3 +593,19 @@ real	2m18.235s
 user	2m14.157s
 sys	0m4.064s
 
+----------FFN CCS Only---------------
+
+
+----------FFN CUI + CCS------------
+
+
+----------GRU CUI + CCS-----------
+
+time python 02_GRU_readmission.py --inputdata=readmit_prepared_data_beta_09.npz --hiddenDimSize=200 --batchSize=10 --nEpochs=100 --kFold=5 --lr=0.01 --withCCS=1
+
+
+
+
+
+
+
