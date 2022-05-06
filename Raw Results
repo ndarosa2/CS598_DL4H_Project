@@ -603,6 +603,21 @@ sys	0m4.064s
 
 time python 02_GRU_readmission.py --inputdata=readmit_prepared_data_beta_09.npz --hiddenDimSize=200 --batchSize=10 --nEpochs=100 --kFold=5 --lr=0.01 --withCCS=1
 
+Training done - deleting variables and starting test
+Traceback (most recent call last):
+  File "/home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/PyTorch_scripts/readmission_prediction/02_GRU_readmission.py", line 296, in <module>
+    train()
+  File "/home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/PyTorch_scripts/readmission_prediction/02_GRU_readmission.py", line 255, in train
+    outputs, h = model(x, h)
+  File "/home/nick/anaconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/PyTorch_scripts/readmission_prediction/02_GRU_readmission.py", line 30, in forward
+    gru_out, hidden = self.gru(x, hidden)
+  File "/home/nick/anaconda3/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1102, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/nick/anaconda3/lib/python3.9/site-packages/torch/nn/modules/rnn.py", line 849, in forward
+    result = _VF.gru(input, hx, self._flat_weights, self.bias, self.num_layers,
+RuntimeError: CUDA out of memory. Tried to allocate 94.00 MiB (GPU 0; 11.77 GiB total capacity; 8.68 GiB already allocated; 73.88 MiB free; 9.48 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
 
 
 
