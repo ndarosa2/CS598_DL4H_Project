@@ -619,8 +619,71 @@ Traceback (most recent call last):
     result = _VF.gru(input, hx, self._flat_weights, self.bias, self.num_layers,
 RuntimeError: CUDA out of memory. Tried to allocate 94.00 MiB (GPU 0; 11.77 GiB total capacity; 8.68 GiB already allocated; 73.88 MiB free; 9.48 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF
 
+time python 02_GRU_readmission.py --inputdata=readmit_prepared_data_beta_09.npz --hiddenDimSize=200 --batchSize=10 --nEpochs=100 --kFold=1 --lr=0.01 --withCCS=1
+Run 1 
+Train Epoch: 99 [5780/5851 (99%)]	Loss: 
+tensor(0.0148, device='cuda:0')
+Train Epoch: 99 [5800/5851 (99%)]	Loss: 
+tensor(0.0219, device='cuda:0')
+Train Epoch: 99 [5820/5851 (99%)]	Loss: 
+tensor(0.0022, device='cuda:0')
+Train Epoch: 99 [5840/5851 (100%)]	Loss: 
+tensor(0.0055, device='cuda:0')
+Training done - deleting variables and starting test
+Variables deleted
+Got to eval
+ROC Average Score: 0.6216866686672446
+AUC_scores:  [0.6216866686672446]
+Mean:  0.6216866686672446
+Total Number of Parameters: 14240601
+
+real	39m24.361s
+user	29m26.662s
+sys	2m44.082s
+
+Run 2
+
+Train Epoch: 99 [5780/5851 (99%)]	Loss: 
+tensor(0.0009, device='cuda:0')
+Train Epoch: 99 [5800/5851 (99%)]	Loss: 
+tensor(2.2478e-06, device='cuda:0')
+Train Epoch: 99 [5820/5851 (99%)]	Loss: 
+tensor(4.6578e-06, device='cuda:0')
+Train Epoch: 99 [5840/5851 (100%)]	Loss: 
+tensor(0.0002, device='cuda:0')
+Training done - deleting variables and starting test
+Variables deleted
+Got to eval
+ROC Average Score: 0.6272454316737288
+AUC_scores:  [0.6272454316737288]
+Mean:  0.6272454316737288
+Total Number of Parameters: 14240601
+
+real	39m10.256s
+user	29m0.288s
+sys	2m45.278s
 
 
+Run 3 
 
+Train Epoch: 99 [5780/5851 (99%)]	Loss: 
+tensor(0.0001, device='cuda:0')
+Train Epoch: 99 [5800/5851 (99%)]	Loss: 
+tensor(0.0003, device='cuda:0')
+Train Epoch: 99 [5820/5851 (99%)]	Loss: 
+tensor(6.0385e-06, device='cuda:0')
+Train Epoch: 99 [5840/5851 (100%)]	Loss: 
+tensor(0.0018, device='cuda:0')
+Training done - deleting variables and starting test
+Variables deleted
+Got to eval
+ROC Average Score: 0.6507235985839882
+AUC_scores:  [0.6507235985839882]
+Mean:  0.6507235985839882
+Total Number of Parameters: 14240601
+
+real	39m7.963s
+user	29m1.545s
+sys	2m42.321s
 
 
