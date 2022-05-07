@@ -615,7 +615,27 @@ real	0m50.985s
 user	0m49.824s
 sys	0m1.327s
 
-Run 2 - change learning rate to 0.01
+Run 2 - default script values (no changes)
+Train Epoch: 99 [9000/9743 (92%)]	Loss: 
+tensor(0.6526, device='cuda:0')
+Train Epoch: 99 [9200/9743 (94%)]	Loss: 
+tensor(0.6669, device='cuda:0')
+Train Epoch: 99 [9400/9743 (96%)]	Loss: 
+tensor(0.6764, device='cuda:0')
+Train Epoch: 99 [9600/9743 (98%)]	Loss: 
+tensor(0.6700, device='cuda:0')
+Training done - deleting variables and starting test
+ROC Average Score: 0.5817894202397127
+AUC_scores:  [0.5954592445881645, 0.6132664205825833, 0.5909650424518866, 0.5904345564914912, 0.5817894202397127]
+Mean:  0.5943829368707677
+Total Number of Parameters: 13551
+
+real	0m51.088s
+user	0m49.848s
+sys	0m1.390s
+
+
+Run 3 - change learning rate to 0.01
 
 Train Epoch: 99 [9000/9743 (92%)]	Loss: 
 tensor(0.6218, device='cuda:0')
@@ -784,3 +804,6 @@ Total Number of Parameters: 14240601
 real	39m28.951s
 user	29m7.456s
 sys	2m48.714s
+
+-----GRU CCS Only-------------
+time python 02_GRU_readmission_CCS_only.py --inputdata=readmit_prepared_data_beta_09.npz --hiddenDimSize=200 --batchSize=10 --nEpochs=100 --kFold=1 --lr=0.01 --withCCS=1
