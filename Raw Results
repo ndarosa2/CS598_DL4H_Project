@@ -25,7 +25,7 @@ Recall@10: 0.3914109433414095
 Recall@20: 0.5750367504244823
 Recall@30: 0.6882901989119966
 AUROC: 0.9108270099497991
-235330269
+Total Parameters: 235330269
 
 # Diagnoses Prediction - TUI: Alpha, Threshold:0.9, CUI Only, Number of Epochs:5000, kFolds:1  
 Train Epoch: 4999 [9000/9742 (92%)]	Loss: 
@@ -421,8 +421,8 @@ sys	0m1.673s
 
 
 ----------GRU CUI+CCS-------------
-# GRU - TUI: Beta, Threshold:0.9, CUI+CCS Only, Number of Epochs:1500, kFolds:5
-
+# GRU - TUI: Beta, Threshold:0.9, CUI+CCS Only, Number of Epochs:1500, kFolds:5 - all default parameters
+time python 02_GRU_mortality.py --inputdata=mort_prepared_data_beta_09.npz --inputdata2=mort_prepared_data_deathTime_beta_09.npz --nEpochs=1500 --kFold=5 --withCCS=1
 # GRU - TUI: Beta, Threshold:0.9, CUI+CCS Only, Number of Epochs:1500, kFolds:1 RUN 1
 Train Epoch: 1499 [1060/1136 (93%)]	Loss: 
 tensor(1.9985e-08, device='cuda:0')
@@ -496,7 +496,30 @@ Mean:  0.9352672281536679
 MEAN AUC_ROC for the 5 Runs = 0.926577
 
 ----------GRU CUI Only-------------
-# GRU - TUI: Beta, Threshold:0.9, CUI Only, Number of Epochs:1500, kFolds:1 RUN 1
+# GRU - TUI: Beta, Threshold:0.9, CUI Only, Number of Epochs:1500, kFolds:5 RUN 1 - all default parameters
+time python 02_GRU_mortality.py --inputdata=mort_prepared_data_beta_09.npz --inputdata2=mort_prepared_data_deathTime_beta_09.npz --nEpochs=1500 --kFold=5 --withCCS=0
+
+Train Epoch: 1499 [1060/1137 (93%)]	Loss: 
+tensor(7.2461e-09, device='cuda:0')
+Train Epoch: 1499 [1080/1137 (95%)]	Loss: 
+tensor(7.4798e-09, device='cuda:0')
+Train Epoch: 1499 [1100/1137 (96%)]	Loss: 
+tensor(1.0869e-08, device='cuda:0')
+Train Epoch: 1499 [1120/1137 (98%)]	Loss: 
+tensor(9.7003e-09, device='cuda:0')
+Training done - deleting variables and starting test
+ROC Average Score: 0.9244915219110295
+AUC_scores:  [0.9342166947711461, 0.9311763707462087, 0.9300611449144436, 0.9062564403083104, 0.9244915219110295]
+Mean:  0.9252404345302278
+Total Number of Parameters: 10060203
+
+real	52m30.945s
+user	52m11.698s
+sys	0m24.883s
+
+----------GRU CCS Only-------------
+# GRU - TUI: Beta, Threshold:0.9, CCS Only, Number of Epochs:1500, kFolds:5 RUN 1 - all default parameters
+time python 02_GRU_mortality_CCS_only.py --inputdata=mort_prepared_data_beta_09.npz --inputdata2=mort_prepared_data_deathTime_beta_09.npz --nEpochs=1500 --kFold=5 --withCCS=0
 
 
 
