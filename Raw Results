@@ -597,9 +597,62 @@ sys	0m4.064s
 
 ----------FFN CCS Only---------------
 time python 02_FFN_readmission_CCS_only.py --inputdata=readmit_prepared_data_beta_09.npz --hiddenDimSize=50 --batchSize=100 --nEpochs=100 --kFold=5 --lr=0.001 --withCCS=1
+Run 1 - default script values (no changes)
+Train Epoch: 99 [9000/9743 (92%)]	Loss: 
+tensor(0.7014, device='cuda:0')
+Train Epoch: 99 [9200/9743 (94%)]	Loss: 
+tensor(0.6499, device='cuda:0')
+Train Epoch: 99 [9400/9743 (96%)]	Loss: 
+tensor(0.7106, device='cuda:0')
+Train Epoch: 99 [9600/9743 (98%)]	Loss: 
+tensor(0.7088, device='cuda:0')
+Training done - deleting variables and starting test
+ROC Average Score: 0.6012076563487403
+AUC_scores:  [0.6000755693934032, 0.5999830416379701, 0.6129307785819292, 0.5869005050932197, 0.6012076563487403]
+Mean:  0.6002195102110525
+
+real	0m50.985s
+user	0m49.824s
+sys	0m1.327s
+
+Run 2 - change learning rate to 0.01
+
+Train Epoch: 99 [9000/9743 (92%)]	Loss: 
+tensor(0.6218, device='cuda:0')
+Train Epoch: 99 [9200/9743 (94%)]	Loss: 
+tensor(0.6478, device='cuda:0')
+Train Epoch: 99 [9400/9743 (96%)]	Loss: 
+tensor(0.6380, device='cuda:0')
+Train Epoch: 99 [9600/9743 (98%)]	Loss: 
+tensor(0.6734, device='cuda:0')
+Training done - deleting variables and starting test
+ROC Average Score: 0.6436790799376707
+AUC_scores:  [0.628370312218113, 0.6320153109782898, 0.6205707528632383, 0.6272200217210759, 0.6436790799376707]
+Mean:  0.6303710955436775
+
+real	0m51.293s
+user	0m50.069s
+sys	0m1.374s
 
 ----------FFN CUI + CCS------------
 time python 02_FFN_readmission.py --inputdata=readmit_prepared_data_beta_09.npz --hiddenDimSize=50 --batchSize=100 --nEpochs=100 --kFold=5 --lr=0.001 --withCCS=1
+Train Epoch: 99 [9000/9743 (92%)]	Loss: 
+tensor(0.5706, device='cuda:0')
+Train Epoch: 99 [9200/9743 (94%)]	Loss: 
+tensor(0.6227, device='cuda:0')
+Train Epoch: 99 [9400/9743 (96%)]	Loss: 
+tensor(0.5628, device='cuda:0')
+Train Epoch: 99 [9600/9743 (98%)]	Loss: 
+tensor(0.5757, device='cuda:0')
+Training done - deleting variables and starting test
+ROC Average Score: 0.7082263639293613
+AUC_scores:  [0.7145895730214278, 0.7079255289686495, 0.699222535583165, 0.7105438984651143, 0.7082263639293613]
+Mean:  0.7081015799935436
+Total Number of Parameters: 1176701
+
+real	2m14.247s
+user	2m6.551s
+sys	0m4.396s
 
 
 ----------GRU CUI + CCS-----------
@@ -709,3 +762,25 @@ real	119m26.582s
 user	367m8.691s
 sys	3m3.543s
 
+-----GRU CUI Only-------------
+time python 02_GRU_readmission.py --inputdata=readmit_prepared_data_beta_09.npz --hiddenDimSize=200 --batchSize=10 --nEpochs=100 --kFold=1 --lr=0.01 --withCCS=0
+
+Train Epoch: 99 [5780/5851 (99%)]	Loss: 
+tensor(0.0013, device='cuda:0')
+Train Epoch: 99 [5800/5851 (99%)]	Loss: 
+tensor(0.0148, device='cuda:0')
+Train Epoch: 99 [5820/5851 (99%)]	Loss: 
+tensor(0.0044, device='cuda:0')
+Train Epoch: 99 [5840/5851 (100%)]	Loss: 
+tensor(6.4008e-05, device='cuda:0')
+Training done - deleting variables and starting test
+Variables deleted
+Got to eval
+ROC Average Score: 0.6513590326581232
+AUC_scores:  [0.6513590326581232]
+Mean:  0.6513590326581232
+Total Number of Parameters: 14240601
+
+real	39m28.951s
+user	29m7.456s
+sys	2m48.714s
