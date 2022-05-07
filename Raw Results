@@ -373,9 +373,10 @@ R@ 30 = 0.55556354226567
 ROC Average Score: 0.8619478409377244
 
 
---------------------------------------------MORTALITY PREDICTION----------------------------------------------------------
+-----------------------------------------------------MORTALITY PREDICTION-------------------------------------------------------------------------------
+All runs are using CUI dataset using TUI: Beta and Threshold:0.9
 
-----------FFN CCI+CCS-------------
+----------FFN CUI+CCS-------------
 
 # FFN - TUI: Beta, Threshold:0.9, CUI+CCS, Number of Epochs:5000, kFolds:5, lr: 0.01. hiddenDimSize: 10000  RUN 1
 time python 02_FFN_mortality.py --inputdata=mort_prepared_data_beta_09.npz --inputdata2=mort_prepared_data_deathTime_beta_09.npz --nEpochs=5000 --kFold=5 --lr=0.01 --withCCS=1
@@ -419,7 +420,7 @@ user	0m51.854s
 sys	0m1.673s
 
 
-----------GRU CCI+CCS-------------
+----------GRU CUI+CCS-------------
 # GRU - TUI: Beta, Threshold:0.9, CUI+CCS Only, Number of Epochs:1500, kFolds:5
 
 # GRU - TUI: Beta, Threshold:0.9, CUI+CCS Only, Number of Epochs:1500, kFolds:1 RUN 1
@@ -494,12 +495,13 @@ Mean:  0.9352672281536679
 
 MEAN AUC_ROC for the 5 Runs = 0.926577
 
-----------GRU CCI Only-------------
+----------GRU CUI Only-------------
 # GRU - TUI: Beta, Threshold:0.9, CUI Only, Number of Epochs:1500, kFolds:1 RUN 1
 
 
 
---------------------------------------------READMISSION PREDICTION----------------------------------------------------------
+-----------------------------------------------------------READMISSION PREDICTION-------------------------------------------------------------------
+All runs are using CUI dataset using TUI: Beta and Threshold:0.9
 ----Prepare Data----
 cd /home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/PyTorch_scripts/readmission_prediction
 time python 01_data_prep_readmission.py --admissions_file ADMISSIONS.csv --diagnoses_file DIAGNOSES_ICD.csv --notes_file post_processed_output_beta_09.csv
