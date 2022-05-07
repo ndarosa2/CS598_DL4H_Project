@@ -686,4 +686,23 @@ real	39m7.963s
 user	29m1.545s
 sys	2m42.321s
 
+Train Epoch: 1499 [5780/5851 (99%)]	Loss: 
+tensor(0., device='cuda:0')
+Train Epoch: 1499 [5800/5851 (99%)]	Loss: 
+tensor(0., device='cuda:0')
+Train Epoch: 1499 [5820/5851 (99%)]	Loss: 
+tensor(0., device='cuda:0')
+Train Epoch: 1499 [5840/5851 (100%)]	Loss: 
+tensor(0., device='cuda:0')
+Training done - deleting variables and starting test
+Variables deleted
+Got to eval
+ROC Average Score: 0.6690791163111689
+AUC_scores:  [0.6690791163111689]
+Mean:  0.6690791163111689
+Total Number of Parameters: 14240601
+
+real	119m26.582s
+user	367m8.691s
+sys	3m3.543s
 
