@@ -8,7 +8,7 @@ Contents
  * Dependencies
  * Data Download Instructions
  * Data Preprocessing Instructions
- * Training and Evaluation Instructions
+ * Model Training and Evaluation Instructions
  * Results
  * References
 
@@ -50,10 +50,13 @@ Data Download Steps
 
 Data Preprocessing Instructions 
 ------------
-The original paper's GitHub has a that README.md provides data processing reproduction steps; however, more detailed steps along with possible necesary troubleshooting is provided below: 
- 1. Download the original paper's repository (patient_trajectory_prediction) [1]
- 2. Download the QuickUMLS repository (QuickUMLS) [5]
- 3. In patient_trajectory_prediction, do the following
+The original paper's GitHub has a that README.md provides data processing reproduction steps; however, more detailed steps along with possible necessary troubleshooting is provided below: 
+
+ 1. Download this GitHub's repository. Other than a couple files, this repository hosts the same files found in the original paper's repository (patient_trajectory_prediction), but with minor script modifications and with some files moved to a different folder. 
+ 	* Modifications included: added lines to calculate total parameters, added with.torch_nograd() to some files to save memory and increase speed, and changed torch.cuda.set_device(1) to torch.cuda.set_device(0) since only tested with one active GPU. 
+ 	* Alternatively, download the original paper's repository (patient_trajectory_prediction) instead [1]
+ 3. Download the QuickUMLS repository (QuickUMLS) [5]
+ 4. In patient_trajectory_prediction, do the following
  	* Copy MIMIC's NOTEEVENTS.csv into the data_cleaning folder
  	* Change directory to data_cleaning 
 	* Run noteEvents_preproc.py. This will generate output.csv
@@ -101,7 +104,11 @@ The original paper's GitHub has a that README.md provides data processing reprod
 	* python 01_data_prep_readmission.py --admissions_file ADMISSIONS.csv --diagnoses_file DIAGNOSES_ICD.csv --notes_file post_processed_output.csv
 	* This command creates prepared_data.npz which is the data used in model training and testing. 
 
-
+Model Training and Evaluation Instructions
+------------
+The original paper's GitHub has a that README.md provides model training and evaluation reproduction steps; however, more detailed steps along with possible necessary troubleshooting is provided below: 
+ 1. Download the original paper's repository (patient_trajectory_prediction) [1]
+ 2. Download the QuickUMLS repository (QuickUMLS) [5]
 Run the model for diagnoses prediction using a feed forward network
 python 02_FFN_diagprediction.py --inputdata=prepared_data.npz --nEpochs=50 --kFold=1 
 
