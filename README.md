@@ -54,9 +54,9 @@ The original paper's GitHub has a that README.md provides data processing reprod
  1. Download the original paper's repository (patient_trajectory_prediction) [1]
  2. Download the QuickUMLS repository (QuickUMLS) [5]
  3. In patient_trajectory_prediction, do the following
- 	a. Copy MIMIC's NOTEEVENTS.csv into the data_cleaning folder
- 	b. Change directory to data_cleaning and 
-	c. Run noteEvents_preproc.py. 
+ 	* Copy MIMIC's NOTEEVENTS.csv into the data_cleaning folder
+ 	* Change directory to data_cleaning and 
+	* Run noteEvents_preproc.py. 
 		* python noteEvents_preproc.py NOTEEVENTS.csv
  	
 
