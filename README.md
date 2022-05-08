@@ -179,6 +179,11 @@ Table 1: The dataset configurations used in the original
 and reproduction experiments.
 ![image](https://user-images.githubusercontent.com/90882619/167284776-e0b52db9-bb89-4454-bf62-0dd411a00ed6.png)
 
+Table 2: Diagnoses prediction metrics Precision@, Re-call@, and AUC-ROC computed over the four dataset configurations using a Feed-Forward network (5000 epochs, 5 fold cross validation). Reproduction results are compared to original paper results.
+![image](https://user-images.githubusercontent.com/90882619/167320402-4a3ee975-6dff-4405-99a7-a7455e7b23ae.png)
+
+Table 3: Metric comparison for inputs CUI codes only, CCS codes only, and CUI codes combined with CCS codes for diagnoses  prediction using the FFN model with default hyperparameters (e.g. 5,000 epochs, hidden size of 10,000). Since Dataset D performed the best in previous experiments, it was used for all runs shown.
+![image](https://user-images.githubusercontent.com/90882619/167320319-4b54a7ba-f927-4ace-b20c-329642f34906.png)
 
 References
 ------------
