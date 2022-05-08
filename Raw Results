@@ -26,6 +26,9 @@ Recall@30: 0.6882901989119966
 AUROC: 0.9108270099497991
 Total Parameters: 235330269
 
+real	458m50.625s
+user	458m12.443s
+sys	0m38.046s
 
 # Diagnoses Prediction - TUI: Beta, Threshold:0.9, CCI Only, Number of Epochs:5000, kFolds:1 RUN 1 - OLD RESULT
 Train Epoch: 4999 [9000/9742 (92%)]	Loss: 
@@ -402,6 +405,11 @@ R@ 10 = 0.2961472110408281
 R@ 20 = 0.44918056354226565
 R@ 30 = 0.55556354226567
 ROC Average Score: 0.8619478409377244
+
+--------------Additional Result: LSTM CUI + CCS----------------------
+# LSTM Training Run 1 - TUI: Beta, Threshold:0.9, CUI Only, Number of Epochs:1500, kFolds:1 RUN 1 --- Produces model_ouput.pt, X-test.data, and Y-test.data
+time python 02_LSTM_train_GPU.py --inputdata=diag_prepared_data_beta_09.npz --nEpochs=1500
+
 
 
 -----------------------------------------------------MORTALITY PREDICTION-------------------------------------------------------------------------------
