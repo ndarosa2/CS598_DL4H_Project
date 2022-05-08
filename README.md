@@ -114,8 +114,8 @@ Model Training and Evaluation Instructions - Diagnoses Prediction
 ------------
 The original paper's GitHub has a that README.md provides model training and evaluation reproduction steps for diagnoses prediction; however, more detailed steps is provided below: 
 
-1. Using a feed foward network, train and diagnoses prediction using a feed forward network
-	* 
+1. Using a feed forward network, train and evaluate the models for diagnoses prediction only using the CUI datasets
+	*  
 2 Run the model for diagnoses prediction using a feed forward network
 python 02_FFN_diagprediction.py --inputdata=prepared_data.npz --nEpochs=50 --kFold=1 
 
