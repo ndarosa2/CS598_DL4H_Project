@@ -3,9 +3,9 @@
 
 Contents
 ---------------------
- * Group Members
  * Selected Paper
  * Reproduction Steps
+ * Results
  * References
 
 Group Members
@@ -20,7 +20,7 @@ The research paper selected for reproduction was:
 
 Zhang, D., Yin, C., Zeng, J. et al. Combining structured and unstructured data for predictive models: a deep learning approach. BMC Med Inform Decis Mak 20, 280 (2020). https://doi.org/10.1186/s12911-020-01297-6 
 
-Github link: https://github.com/JamilProg/patient\_trajectory\_prediction
+Github link: https://github.com/JamilProg/patient_trajectory_prediction
 
 Reproduction Steps
 ------------
