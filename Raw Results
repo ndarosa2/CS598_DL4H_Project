@@ -1,8 +1,7 @@
 -------------------------------------------------------------DIAGNOSES PREDICTION-----------------------------------------------------------
 ----------------------FFN CUI Only------------------------------
 # Diagnoses Prediction - TUI: Beta, Threshold:0.9, CUI Only, Number of Epochs:5000, kFolds:5  
-python 02_FFN_diagprediction.py --inputdata=diag_prepared_data_beta_09.npz --nEpochs=5000 --kFold=5
-
+time python 02_FFN_diagprediction.py --inputdata=diag_prepared_data_beta_09.npz --nEpochs=5000 --kFold=5
 Train Epoch: 4999 [9000/9743 (92%)]	Loss: 
 tensor(0.1005, device='cuda:0')
 Train Epoch: 4999 [9200/9743 (94%)]	Loss: 
@@ -26,30 +25,6 @@ Recall@20: 0.5750367504244823
 Recall@30: 0.6882901989119966
 AUROC: 0.9108270099497991
 Total Parameters: 235330269
-
-# Diagnoses Prediction - TUI: Alpha, Threshold:0.9, CUI Only, Number of Epochs:5000, kFolds:1  
-Train Epoch: 4999 [9000/9742 (92%)]	Loss: 
-tensor(0.0987, device='cuda:0')
-Train Epoch: 4999 [9200/9742 (94%)]	Loss: 
-tensor(0.1036, device='cuda:0')
-Train Epoch: 4999 [9400/9742 (96%)]	Loss: 
-tensor(0.1000, device='cuda:0')
-Train Epoch: 4999 [9600/9742 (98%)]	Loss: 
-tensor(0.1000, device='cuda:0')
-/home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/PyTorch_scripts/diagnoses_prediction/02_FFN_diagprediction.py:223: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
-  data, target = Variable(data, volatile=True), Variable(target, volatile=True)
-Scores for each fold:
-Precision: [[0.7344006568144499, 0.673440065681445, 0.6282156540777231]]
-Recall: [[0.38278037714447755, 0.5653268112859776, 0.6794980859208847]]
-AUROC: [0.9088755793882719]
-Average scores:
-Precision@1: 0.7344006568144499
-Precision@2: 0.673440065681445
-Precision@3: 0.6282156540777231
-Recall@10: 0.38278037714447755
-Recall@20: 0.5653268112859776
-Recall@30: 0.6794980859208847
-
 
 # Diagnoses Prediction - TUI: Beta, Threshold:0.9, CCI Only, Number of Epochs:5000, kFolds:1 RUN 1
 Train Epoch: 4999 [9000/9742 (92%)]	Loss: 
@@ -75,6 +50,40 @@ Recall@20: 0.5774808887618775
 Recall@30: 0.6891833964420947
 AUROC: 0.9113469880422574
 Total Parameters: 235330269 # addition to original code 
+
+
+# Diagnoses Prediction - TUI: Alpha, Threshold:0.9, CUI Only, Number of Epochs:5000, kFolds:5  
+time python 02_FFN_diagprediction.py --inputdata=diag_prepared_data_alpha_09.npz --nEpochs=5000 --kFold=5
+
+
+
+
+
+For test run of kfold =1 
+Train Epoch: 4999 [9000/9742 (92%)]	Loss: 
+tensor(0.0987, device='cuda:0')
+Train Epoch: 4999 [9200/9742 (94%)]	Loss: 
+tensor(0.1036, device='cuda:0')
+Train Epoch: 4999 [9400/9742 (96%)]	Loss: 
+tensor(0.1000, device='cuda:0')
+Train Epoch: 4999 [9600/9742 (98%)]	Loss: 
+tensor(0.1000, device='cuda:0')
+/home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/PyTorch_scripts/diagnoses_prediction/02_FFN_diagprediction.py:223: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  data, target = Variable(data, volatile=True), Variable(target, volatile=True)
+Scores for each fold:
+Precision: [[0.7344006568144499, 0.673440065681445, 0.6282156540777231]]
+Recall: [[0.38278037714447755, 0.5653268112859776, 0.6794980859208847]]
+AUROC: [0.9088755793882719]
+Average scores:
+Precision@1: 0.7344006568144499
+Precision@2: 0.673440065681445
+Precision@3: 0.6282156540777231
+Recall@10: 0.38278037714447755
+Recall@20: 0.5653268112859776
+Recall@30: 0.6794980859208847
+
+
+
 
 ---------------------FFN CUI + CCS ------------------------------
 # Diagnoses Prediction - TUI: Beta, Threshold:0.9, CUI+CCS, Number of Epochs:5000, kFolds:5  
