@@ -3,6 +3,7 @@
 
 Contents
 ---------------------
+ * Group Members
  * Selected Paper
  * Reproduction Steps
  * Results
