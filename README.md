@@ -58,20 +58,11 @@ The original paper's GitHub has a that README.md provides data processing reprod
  	* Change directory to data_cleaning 
 	* Run noteEvents_preproc.py. This will generate output.csv
 		* python noteEvents_preproc.py NOTEEVENTS.csv
-	* Run python MIMIC_smart_splitter.py 
+		*  According to the original paper's GitHub it takes about 4 hours to finish, but in reproduction testing it took approximately 2 hours.
+	* Run python MIMIC_smart_splitter.py. Splits the preprocessed text into files of 50 Mb and puts those file in a new folder called data. 
 		* python MIMIC_smart_splitter.py output.csv
+		*  According to the original paper's GitHub it takes about 1 hour to finish, but in reproduction testing it took approximately 20 minutes.
  	
-
-Copy MIMIC's NOTEEVENTS.csv into data_cleaning folder
-
-cd /home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/data_cleaning
-
-python noteEvents_preproc.py NOTEEVENTS.csv
-
-python MIMIC_smart_splitter.py output.csv
-
-Download the full release of UMLS here https://www.nlm.nih.gov/research/umls/licensedcontent/umlsknowledgesources.html
-
 Unzip UMLS folder umls-2021AB-full
 
 Navigate to umls-2021AB-full/2021AB-full and unzip mmsys.zip
