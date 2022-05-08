@@ -611,6 +611,30 @@ real	23m14.027s
 user	23m2.139s
 sys	0m16.100s
 
+--------Additional Results - GRU Mortality Prediction with dataset C (TUI List alpha and threshold 0.9)--------------
+------GRU CUI Only--------- default parameters
+time python 02_GRU_mortality.py --inputdata=mort_prepared_data_alpha_09.npz --inputdata2=mort_prepared_data_deathTime_alpha_09.npz 
+
+Train Epoch: 1499 [1060/1137 (93%)]	Loss: 
+tensor(1.2505e-08, device='cuda:0')
+Train Epoch: 1499 [1080/1137 (95%)]	Loss: 
+tensor(0., device='cuda:0')
+Train Epoch: 1499 [1100/1137 (96%)]	Loss: 
+tensor(0., device='cuda:0')
+Train Epoch: 1499 [1120/1137 (98%)]	Loss: 
+tensor(0., device='cuda:0')
+Training done - deleting variables and starting test
+ROC Average Score: 0.927823491335336
+AUC_scores:  [0.9176285987841897, 0.9155978584176085, 0.9223609711374261, 0.9242986905439676, 0.927823491335336]
+Mean:  0.9215419220437056
+Total Number of Parameters: 7156803
+
+real	45m36.115s
+user	45m11.660s
+sys	0m26.045s
+
+------GRU CUI+CCS Only--------- default parameters
+time python 02_GRU_mortality.py --inputdata=mort_prepared_data_alpha_09.npz --inputdata2=mort_prepared_data_deathTime_alpha_09.npz --withCCS=1
 
 -----------------------------------------------------------READMISSION PREDICTION-------------------------------------------------------------------
 All runs are using CUI dataset using TUI: Beta and Threshold:0.9
