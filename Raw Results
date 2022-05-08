@@ -223,37 +223,9 @@ time python 02_FFN_diagprediction.py --inputdata=diag_prepared_data_alpha_07.npz
 
 
 --------------GRU CUI Only----------------------
-# GRU Training Run 1 - TUI: Beta, Threshold:0.9, CUI Only, Number of Epochs:1500, kFolds:1 RUN 1 --- Produces model_ouput.pt, X-test.data, and Y-test.data
-time python 02_GRU_train_GPU.py --inputdata=diag_prepared_data_beta_09.npz --nEpochs=1500
 
-Train Epoch: 1499 [6460/6583 (98%)]	Loss: 
-tensor(0.0025, device='cuda:0')
-Train Epoch: 1499 [6480/6583 (98%)]	Loss: 
-tensor(0.0040, device='cuda:0')
-Train Epoch: 1499 [6500/6583 (99%)]	Loss: 
-tensor(0.0050, device='cuda:0')
-Train Epoch: 1499 [6520/6583 (99%)]	Loss: 
-tensor(0.0043, device='cuda:0')
-Train Epoch: 1499 [6540/6583 (99%)]	Loss: 
-tensor(0.0056, device='cuda:0')
-Train Epoch: 1499 [6560/6583 (100%)]	Loss: 
-tensor(0.0038, device='cuda:0')
 
-# GRU Testing Run 1- TUI: Beta, Threshold:0.9, CUI Only
-python 03_GRU_test.py --Xinputdata=X-test.data --Yinputdata=Y-test.data --inputModel=model_output.pt
-Dataset with : 731 patients. Y: 731
-Each patient has : 41 admissions. Y: 41
-X_dataset_shape= torch.Size([731, 41, 23263])
-Y_dataset_shape= torch.Size([731, 41, 269])
-P@ 1 = 0.4661087866108787
-P@ 2 = 0.44184100418410044
-P@ 3 = 0.4256624825662483
-R@ 10 = 0.2585400425230333
-R@ 20 = 0.4107016300496102
-R@ 30 = 0.5265768958185684
-ROC Average Score: 0.8565521275530967
-
-# GRU Training Run 2 - TUI: Beta, Threshold:0.9, CUI Only, Number of Epochs:1500, kFolds:1 RUN 1 --- Produces model_ouput.pt, X-test.data, and Y-test.data
+# GRU Training Run 1 - TUI: Beta, Threshold:0.9, CUI Only, Number of Epochs:1500 --- Produces model_ouput.pt, X-test.data, and Y-test.data
 time python 02_GRU_train_GPU.py --inputdata=diag_prepared_data_beta_09.npz --nEpochs=1500
 
 Train Epoch: 1499 [6500/6583 (99%)]	Loss: 
@@ -288,6 +260,7 @@ Total Number of Parameters: 14133069
 real	0m32.266s
 user	1m45.867s
 sys	0m17.094s
+
 
 --------------GRU CUI + CCS----------------------
 # GRU Training Run 1 - TUI: Beta, Threshold:0.9, CUI+CCS, Number of Epochs:1500, kFolds:1 RUN 1 --- Produces model_ouput.pt, X-test.data, and Y-test.data
