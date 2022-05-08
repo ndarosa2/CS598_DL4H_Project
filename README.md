@@ -175,6 +175,26 @@ Raw results and completion times are provided in the text file Raw Results.
 
 Provided below are tables summarizing the reproduction results. Discussions of these results can be found in the associated reproduction paper.
 
+\begin{table}\scriptsize
+\caption{The dataset
+configurations used in the original and reproduction
+experiments.} 
+\setlength{\tabcolsep}{1pt}
+\begin{tabular}{||c c c c c ||}
+ \hline
+ Dataset & Threshold & TUI List & \# of CUI Codes & Comment\\ [0.5ex] 
+ \hline\hline
+  A & 0.7 & Alpha (47 types) & 33,752 & Successfully reproduced \\ 
+ \hline
+   B & 0.7 & Beta (85 types) & 39,049 & Failed to reproduce \\ 
+ \hline
+   C & 0.9 & Alpha (47 types) & 16,723 & Successfully reproduced \\ 
+ \hline
+   D & 0.9 & Beta (85 types) & 22,820 & Successfully reproduced \\ 
+ \hline
+\end{tabular}
+\setlength{\tabcolsep}{1pt}
+\end{table}
 
 References
 ------------
