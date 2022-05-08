@@ -385,7 +385,7 @@ real	120m0.735s
 user	118m54.479s
 sys	0m36.295s
 
-# LSTM Testing Run 1- TUI: Beta, Threshold:0.9, CUI Only
+# LSTM Testing Run 2- TUI: Beta, Threshold:0.9, CUI Only
 python 03_LSTM_test.py --Xinputdata=X-test.data --Yinputdata=Y-test.data --inputModel=model_output.pt
 
 Dataset with : 731 patients. Y: 731
@@ -399,6 +399,15 @@ R@ 10 = 0.2961472110408281
 R@ 20 = 0.44918056354226565
 R@ 30 = 0.55556354226567
 ROC Average Score: 0.8619478409377244
+
+Avg. P@ 1 = 0.56222410078176
+Avg. P@ 2 = 0.52167467669899
+Avg. P@ 3 = 0.48946357800548
+Avg. R@ 10 = 0.30557505647805
+Avg. R@ 20 = 	0.46120519761559
+Avg. R@ 30 = 0.56768310601386
+Avg. ROC Average Score: 0.86305201545397
+
 
 --------------Additional Result: LSTM CUI + CCS----------------------
 # LSTM Run 1 - TUI: Beta, Threshold:0.9, CUI Only, Number of Epochs:1500, kFolds:1 RUN 1 --- Produces model_ouput.pt, X-test.data, and Y-test.data
