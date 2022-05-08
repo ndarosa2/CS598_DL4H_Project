@@ -31,7 +31,7 @@ Dependencies
 
 * Python 3.7
 * Cuda version 10.2
- 	* If Cuda is not used to accelerate training, then the Pytorch scripts need to be edited to not use a GPU; however, training solely on CPU is not feasible due to the computation time. 
+ 	* If a GPU that is CUDA enabled is not used to accelerate training, then the Pytorch scripts need to be edited to not use a GPU; however, training solely on CPU is not feasible due to the computation time and so is not recommended. 
 * cuda / cudatoolkit 11.3.1
 * dill 0.3.4
 * matplotlib 3.5.1
