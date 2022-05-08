@@ -85,30 +85,18 @@ The original paper's GitHub has a that README.md provides data processing reprod
 9. Since quickUMLS_getCUI.py generated about 70 .csv.output files in the outputchunkssmall folder, change directory to data/outputchunkssmall and run the following command to concatenate the files and produce concatenated_output.csv. 
 	* cat 1.csv.output 2.csv.output 3.csv.output 4.csv.output 5.csv.output 6.csv.output 7.csv.output 8.csv.output 9.csv.output 10.csv.output 11.csv.output 12.csv.output 13.csv.output 14.csv.output 15.csv.output 16.csv.output 17.csv.output 18.csv.output 19.csv.output 20.csv.output 21.csv.output 22.csv.output 23.csv.output 24.csv.output 25.csv.output 26.csv.output 27.csv.output 28.csv.output 29.csv.output 30.csv.output 31.csv.output 32.csv.output 33.csv.output 34.csv.output 35.csv.output 36.csv.output 37.csv.output 38.csv.output 39.csv.output 40.csv.output 41.csv.output 42.csv.output 43.csv.output 44.csv.output 45.csv.output 46.csv.output 47.csv.output 48.csv.output 49.csv.output 50.csv.output 51.csv.output 52.csv.output 53.csv.output 54.csv.output 55.csv.output 56.csv.output 57.csv.output 58.csv.output 59.csv.output 60.csv.output 61.csv.output 62.csv.output 63.csv.output 64.csv.output 65.csv.output 66.csv.output 67.csv.output 68.csv.output 69.csv.output 70.csv.output 71.csv.output > concatenated_output.csv
 
+10. Copy quickumls_processing.py from the concept_annotation folder into the outputchunkssmall folder and run the following command:
+	* python quickumls_processing.py concatenated_output.csv
+	* This command generates post_process_output.csv
 
+11. Copy post_process_output.csv,ADMISSIONS.csv (MIMIC-III file), and DIAGNOSES_ICD.csv (MIMIC-III file) into patient_trajectory_prediction/Pytorch_scripts/diagnoses_prediction, patient_trajectory_prediction/Pytorch_scripts/mortality_prediction, and patient_trajectory_prediction/Pytorch_scripts/readmission_prediction
 
-cd /home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/concept_annotation/QuickUMLS-master
-
-
-python quickUMLS_getCUI.py --t=0.9 --TUI=Alpha
-
-cd /home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/concept_annotation/data/outputchunkssmall
-
-### Command to concatenate the outputs from 1.csv to 71.csv [QuickUMLS AND MetaMap] :
-cat 1.csv.output 2.csv.output 3.csv.output 4.csv.output 5.csv.output 6.csv.output 7.csv.output 8.csv.output 9.csv.output 10.csv.output 11.csv.output 12.csv.output 13.csv.output 14.csv.output 15.csv.output 16.csv.output 17.csv.output 18.csv.output 19.csv.output 20.csv.output 21.csv.output 22.csv.output 23.csv.output 24.csv.output 25.csv.output 26.csv.output 27.csv.output 28.csv.output 29.csv.output 30.csv.output 31.csv.output 32.csv.output 33.csv.output 34.csv.output 35.csv.output 36.csv.output 37.csv.output 38.csv.output 39.csv.output 40.csv.output 41.csv.output 42.csv.output 43.csv.output 44.csv.output 45.csv.output 46.csv.output 47.csv.output 48.csv.output 49.csv.output 50.csv.output 51.csv.output 52.csv.output 53.csv.output 54.csv.output 55.csv.output 56.csv.output 57.csv.output 58.csv.output 59.csv.output 60.csv.output 61.csv.output 62.csv.output 63.csv.output 64.csv.output 65.csv.output 66.csv.output 67.csv.output 68.csv.output 69.csv.output 70.csv.output 71.csv.output > concatenated_output.csv
-
-Copy quickumls_processing.py into the outputchunkssmall folder 
-
-python quickumls_processing.py concatenated_output.csv
-
-Copy post_process_output.csv into Pytorch_scripts/diagnoses_prediction
-
-Copy ADMISSIONS.csv and DIAGNOSES_ICD.csv into Pytorch_scripts/diagnoses_prediction
-
-cd /home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/PyTorch_scripts/diagnoses_prediction
-
-python 01_data_preparation.py --admissions_file ADMISSIONS.csv --diagnoses_file DIAGNOSES_ICD.csv --notes_file post_processed_output_alpha_09.csv
-
+12. Change directory to patient_trajectory_prediction-master/PyTorch_scripts/diagnoses_prediction and run the following command to prepare the data for diagnoses prediction:
+	* python 01_data_preparation.py --admissions_file ADMISSIONS.csv --diagnoses_file DIAGNOSES_ICD.csv --notes_file post_processed_output_alpha_09.csv
+	* This command created prepared_data.npz which is the data used in model training and testing. 
+13. Likewise change directory to patient_trajectory_prediction-master/PyTorch_scripts/mortality_prediction and run the following command to prepare the data for mortality prediction:
+	* python 01_data_preparation.py --admissions_file ADMISSIONS.csv --diagnoses_file DIAGNOSES_ICD.csv --notes_file post_processed_output_alpha_09.csv
+	* This command created prepared_data.npz which is the data used in model training and testing. 
 That creates prepared_data.npz 
 
 Run the model for diagnoses prediction using a feed forward network
