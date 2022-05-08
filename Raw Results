@@ -1,3 +1,20 @@
+-------------------------------------------Generating Dataset A------------------------------------------------------
+time python quickUMLS_getCUI.py --t=0.7 --TUI=Alpha
+
+File ./data/chunkssmall/47.csv closed!
+File ./data/chunkssmall/27.csv closed!
+File ./data/chunkssmall/40.csv closed!
+File ./data/chunkssmall/55.csv closed!
+Exception ignored in: <function Pool.__del__ at 0x7f306336c0d0>
+Traceback (most recent call last):
+  File "/home/nickjdarosa/anaconda3/lib/python3.9/multiprocessing/pool.py", line 268, in __del__
+  File "/home/nickjdarosa/anaconda3/lib/python3.9/multiprocessing/queues.py", line 372, in put
+AttributeError: 'NoneType' object has no attribute 'dumps'
+
+real	2476m19.998s
+user	57675m36.341s
+sys	115m9.943s
+
 -------------------------------------------------------------DIAGNOSES PREDICTION-----------------------------------------------------------
 ----------------------FFN CUI Only------------------------------
 
