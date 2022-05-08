@@ -26,7 +26,8 @@ Recall@30: 0.6882901989119966
 AUROC: 0.9108270099497991
 Total Parameters: 235330269
 
-# Diagnoses Prediction - TUI: Beta, Threshold:0.9, CCI Only, Number of Epochs:5000, kFolds:1 RUN 1
+
+# Diagnoses Prediction - TUI: Beta, Threshold:0.9, CCI Only, Number of Epochs:5000, kFolds:1 RUN 1 - OLD RESULT
 Train Epoch: 4999 [9000/9742 (92%)]	Loss: 
 tensor(0.0968, device='cuda:0')
 Train Epoch: 4999 [9200/9742 (94%)]	Loss: 
@@ -55,9 +56,33 @@ Total Parameters: 235330269 # addition to original code
 # Diagnoses Prediction - TUI: Alpha, Threshold:0.9, CUI Only, Number of Epochs:5000, kFolds:5  
 time python 02_FFN_diagprediction.py --inputdata=diag_prepared_data_alpha_09.npz --nEpochs=5000 --kFold=5
 
+Train Epoch: 4999 [9000/9743 (92%)]	Loss: 
+tensor(0.0960, device='cuda:0')
+Train Epoch: 4999 [9200/9743 (94%)]	Loss: 
+tensor(0.1027, device='cuda:0')
+Train Epoch: 4999 [9400/9743 (96%)]	Loss: 
+tensor(0.1037, device='cuda:0')
+Train Epoch: 4999 [9600/9743 (98%)]	Loss: 
+tensor(0.1025, device='cuda:0')
+/home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/PyTorch_scripts/diagnoses_prediction/02_FFN_diagprediction.py:223: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  data, target = Variable(data, volatile=True), Variable(target, volatile=True)
+Scores for each fold:
+Precision: [[0.7487684729064039, 0.6884236453201971, 0.6372468527640941], [0.7151067323481116, 0.6631773399014779, 0.6154898741105638], [0.7364532019704434, 0.6808292282430214, 0.6401204159824849], [0.737577002053388, 0.6724845995893224, 0.6227241615331964], [0.7527720739219712, 0.6887063655030801, 0.6414784394250513]]
+Recall: [[0.38566733806848297, 0.5698787943036856, 0.6850065373334747], [0.3844576362655154, 0.5698866702644361, 0.6828926065839179], [0.38966588966588966, 0.5678462951190224, 0.6782157236702692], [0.39044741763775, 0.5749532441375341, 0.6865918572867213], [0.3853661937462962, 0.5694565482622791, 0.6823299752501133]]
+AUROC: [0.9097073840977433, 0.9090815345494816, 0.9076645862126028, 0.909379122668561, 0.9096462718019054]
+Average scores:
+Precision@1: 0.7381354966400636
+Precision@2: 0.6787242357114198
+Precision@3: 0.631411948763078
+Recall@10: 0.3871208950767869
+Recall@20: 0.5704043104173915
+Recall@30: 0.6830073400248993
+AUROC: 0.9090957798660589
+Total Number of Parameters: 173890269
 
-
-
+real	422m50.625s
+user	422m12.443s
+sys	0m47.031s
 
 For test run of kfold =1 
 Train Epoch: 4999 [9000/9742 (92%)]	Loss: 
@@ -81,9 +106,6 @@ Precision@3: 0.6282156540777231
 Recall@10: 0.38278037714447755
 Recall@20: 0.5653268112859776
 Recall@30: 0.6794980859208847
-
-
-
 
 ---------------------FFN CUI + CCS ------------------------------
 # Diagnoses Prediction - TUI: Beta, Threshold:0.9, CUI+CCS, Number of Epochs:5000, kFolds:5  
