@@ -191,6 +191,12 @@ Table 4: Comparison of the two RNN architectures (LSTM and GRU) against the FFN 
 Table 5: Comparison of only using CUI codes are input to the models and only using CCS codes as input into the models. As in the original paper, note that only the best performing architecture (e.g. FFN) for each task (e.g. diagnoses prediction) is shown.
 ![image](https://user-images.githubusercontent.com/90882619/167320537-9c86605a-fbbb-47a3-a81b-81b59c8ff7d7.png)
 
+Table 6: Summary of original and reproduction results for diagnoses, mortality, and readmission predictions
+![image](https://user-images.githubusercontent.com/90882619/167320641-2dc5773d-1ec7-4e89-83bf-dfdad554acb0.png)
+
+Table 7: Comparison of Precision@1 results for diagnoses code prediction among competing configurations presented by Sushil et al. [6] .
+![image](https://user-images.githubusercontent.com/90882619/167320645-b7363846-ada9-41a6-8fee-1ee95b84589c.png)
+
 References
 ------------
 1. Zaghir, Jamil & Rodrigues Jr, Jose & Goeuriot, Lorraine & Amer-Yahia, Sihem. (2021). Real-world Patient Trajectory Prediction from Clinical Notes Using Artificial Neural Networks and UMLS-Based Extraction of Concepts. Journal of Healthcare Informatics Research. 5. 10.1007/s41666-021-00100-z. 
@@ -203,3 +209,5 @@ GitHub link: https://github.com/JamilProg/patient_trajectory_prediction
 4. MIT’s MIMIC-III. https://mimic.physionet.org/, accessed April, 2022
 
 5. Quickumls github link. https://github.com/Georgetown-IR-Lab/QuickUMLS, Accessed April, 2022
+
+6. Sushil M, ˇSuster S., Luyckx K, Daelemans W (2018) Patient representation learning and interpretable evaluation using clinical notes. J. Biomed. Informatics 84:103 8. 
