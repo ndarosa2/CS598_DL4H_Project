@@ -115,7 +115,8 @@ python 02_FFN_diagprediction.py --inputdata=prepared_data.npz --nEpochs=50 --kFo
 
 References
 ------------
-1. Zhang, D., Yin, C., Zeng, J. et al. Combining structured and unstructured data for predictive models: a deep learning approach. BMC Med Inform Decis Mak 20, 280 (2020). https://doi.org/10.1186/s12911-020-01297-6 Github link: https://github.com/JamilProg/patient\_trajectory\_prediction
+1. Zaghir, Jamil & Rodrigues Jr, Jose & Goeuriot, Lorraine & Amer-Yahia, Sihem. (2021). Real-world Patient Trajectory Prediction from Clinical Notes Using Artificial Neural Networks and UMLS-Based Extraction of Concepts. Journal of Healthcare Informatics Research. 5. 10.1007/s41666-021-00100-z. 
+GitHub link: https://github.com/JamilProg/patient_trajectory_prediction
 
 2. Unified medical language system (UMLS). https://www.nlm.nih.gov/research/umls/index.html, accessed April, 2022
 
