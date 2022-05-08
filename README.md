@@ -103,13 +103,20 @@ The original paper's GitHub has a that README.md provides data processing reprod
 14. Change directory to patient_trajectory_prediction-master/PyTorch_scripts/readmission_prediction and run the following command to prepare the data for readmission prediction:
 	* python 01_data_prep_readmission.py --admissions_file ADMISSIONS.csv --diagnoses_file DIAGNOSES_ICD.csv --notes_file post_processed_output.csv
 	* This command creates prepared_data.npz which is the data used in model training and testing. 
-
-Model Training and Evaluation Instructions
+15. To generate the other datasets steps, repeat Steps 7-14. The datasets are as follows:
+	* Dataset A: Theshold is 0.7 and using TUI list Alpha
+	* Dataset B: Theshold is 0.7 and using TUI list Beta
+	* Dataset C: Theshold is 0.9 and using TUI list Alpha
+	* Dataset D: Theshold is 0.9 and using TUI list Beta
+16. Note that Datasets A,B,C are only used for feed forward network diagnoses prediction. The primary dataset used is Dataset D (is used for diagnoses, mortality, and readmission, prediction). 
+ 
+Model Training and Evaluation Instructions - Diagnoses Prediction
 ------------
-The original paper's GitHub has a that README.md provides model training and evaluation reproduction steps; however, more detailed steps along with possible necessary troubleshooting is provided below: 
- 1. Download the original paper's repository (patient_trajectory_prediction) [1]
- 2. Download the QuickUMLS repository (QuickUMLS) [5]
-Run the model for diagnoses prediction using a feed forward network
+The original paper's GitHub has a that README.md provides model training and evaluation reproduction steps for diagnoses prediction; however, more detailed steps is provided below: 
+
+1. Using a feed foward network, train and diagnoses prediction using a feed forward network
+	* 
+2 Run the model for diagnoses prediction using a feed forward network
 python 02_FFN_diagprediction.py --inputdata=prepared_data.npz --nEpochs=50 --kFold=1 
 
 References
