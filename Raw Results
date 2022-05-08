@@ -1,60 +1,5 @@
 -------------------------------------------------------------DIAGNOSES PREDICTION-----------------------------------------------------------
 ----------------------FFN CUI Only------------------------------
-# Diagnoses Prediction - TUI: Beta, Threshold:0.9, CUI Only, Number of Epochs:5000, kFolds:5  
-time python 02_FFN_diagprediction.py --inputdata=diag_prepared_data_beta_09.npz --nEpochs=5000 --kFold=5
-Train Epoch: 4999 [9000/9743 (92%)]	Loss: 
-tensor(0.1005, device='cuda:0')
-Train Epoch: 4999 [9200/9743 (94%)]	Loss: 
-tensor(0.1000, device='cuda:0')
-Train Epoch: 4999 [9400/9743 (96%)]	Loss: 
-tensor(0.0887, device='cuda:0')
-Train Epoch: 4999 [9600/9743 (98%)]	Loss: 
-tensor(0.0942, device='cuda:0')
-/home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/PyTorch_scripts/diagnoses_prediction/02_FFN_diagprediction.py:223: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
-  data, target = Variable(data, volatile=True), Variable(target, volatile=True)
-Scores for each fold:
-Precision: [[0.7545155993431856, 0.6921182266009852, 0.6432676518883416], [0.7491789819376026, 0.6826765188834154, 0.6294471811713191], [0.7614942528735632, 0.6888341543513957, 0.6416256157635468], [0.7408624229979466, 0.6817248459958932, 0.6349075975359343], [0.7429158110882957, 0.6854209445585215, 0.6379192334017796]]
-Recall: [[0.3958153890324433, 0.5785601492965834, 0.6916810221073787], [0.38572331904728446, 0.5690297196655659, 0.6838333450432095], [0.3906122882105338, 0.5743341233065685, 0.6874535743341234], [0.39307951048450585, 0.5768983038717527, 0.6890431546554069], [0.3918242099322799, 0.5763614559819413, 0.6894398984198645]]
-AUROC: [0.9111442372252068, 0.9101056673370209, 0.9104749529750059, 0.9108773421881794, 0.9115328500235826]
-Average scores:
-Precision@1: 0.7497934136481187
-Precision@2: 0.6861549380780423
-Precision@3: 0.6374334559521844
-Recall@10: 0.3914109433414095
-Recall@20: 0.5750367504244823
-Recall@30: 0.6882901989119966
-AUROC: 0.9108270099497991
-Total Parameters: 235330269
-
-real	458m50.625s
-user	458m12.443s
-sys	0m38.046s
-
-# Diagnoses Prediction - TUI: Beta, Threshold:0.9, CCI Only, Number of Epochs:5000, kFolds:1 RUN 1 - OLD RESULT
-Train Epoch: 4999 [9000/9742 (92%)]	Loss: 
-tensor(0.0968, device='cuda:0')
-Train Epoch: 4999 [9200/9742 (94%)]	Loss: 
-tensor(0.1023, device='cuda:0')
-Train Epoch: 4999 [9400/9742 (96%)]	Loss: 
-tensor(0.0973, device='cuda:0')
-Train Epoch: 4999 [9600/9742 (98%)]	Loss: 
-tensor(0.0930, device='cuda:0')
-/home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/PyTorch_scripts/diagnoses_prediction/02_FFN_diagprediction.py:223: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
-  data, target = Variable(data, volatile=True), Variable(target, volatile=True)
-Scores for each fold:
-Precision: [[0.7520525451559934, 0.6822660098522167, 0.6319102353585112]]
-Recall: [[0.39069086232764166, 0.5774808887618775, 0.6891833964420947]]
-AUROC: [0.9113469880422574]
-Average scores:
-Precision@1: 0.7520525451559934
-Precision@2: 0.6822660098522167
-Precision@3: 0.6319102353585112
-Recall@10: 0.39069086232764166
-Recall@20: 0.5774808887618775
-Recall@30: 0.6891833964420947
-AUROC: 0.9113469880422574
-Total Parameters: 235330269 # addition to original code 
-
 
 # Diagnoses Prediction - TUI: Alpha, Threshold:0.9, CUI Only, Number of Epochs:5000, kFolds:5  
 time python 02_FFN_diagprediction.py --inputdata=diag_prepared_data_alpha_09.npz --nEpochs=5000 --kFold=5
@@ -110,6 +55,61 @@ Recall@10: 0.38278037714447755
 Recall@20: 0.5653268112859776
 Recall@30: 0.6794980859208847
 
+
+# Diagnoses Prediction - TUI: Beta, Threshold:0.9, CUI Only, Number of Epochs:5000, kFolds:5  
+time python 02_FFN_diagprediction.py --inputdata=diag_prepared_data_beta_09.npz --nEpochs=5000 --kFold=5
+Train Epoch: 4999 [9000/9743 (92%)]	Loss: 
+tensor(0.1005, device='cuda:0')
+Train Epoch: 4999 [9200/9743 (94%)]	Loss: 
+tensor(0.1000, device='cuda:0')
+Train Epoch: 4999 [9400/9743 (96%)]	Loss: 
+tensor(0.0887, device='cuda:0')
+Train Epoch: 4999 [9600/9743 (98%)]	Loss: 
+tensor(0.0942, device='cuda:0')
+/home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/PyTorch_scripts/diagnoses_prediction/02_FFN_diagprediction.py:223: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  data, target = Variable(data, volatile=True), Variable(target, volatile=True)
+Scores for each fold:
+Precision: [[0.7545155993431856, 0.6921182266009852, 0.6432676518883416], [0.7491789819376026, 0.6826765188834154, 0.6294471811713191], [0.7614942528735632, 0.6888341543513957, 0.6416256157635468], [0.7408624229979466, 0.6817248459958932, 0.6349075975359343], [0.7429158110882957, 0.6854209445585215, 0.6379192334017796]]
+Recall: [[0.3958153890324433, 0.5785601492965834, 0.6916810221073787], [0.38572331904728446, 0.5690297196655659, 0.6838333450432095], [0.3906122882105338, 0.5743341233065685, 0.6874535743341234], [0.39307951048450585, 0.5768983038717527, 0.6890431546554069], [0.3918242099322799, 0.5763614559819413, 0.6894398984198645]]
+AUROC: [0.9111442372252068, 0.9101056673370209, 0.9104749529750059, 0.9108773421881794, 0.9115328500235826]
+Average scores:
+Precision@1: 0.7497934136481187
+Precision@2: 0.6861549380780423
+Precision@3: 0.6374334559521844
+Recall@10: 0.3914109433414095
+Recall@20: 0.5750367504244823
+Recall@30: 0.6882901989119966
+AUROC: 0.9108270099497991
+Total Parameters: 235330269
+
+real	458m46.489s
+user	458m8.443s
+sys	0m38.046s
+
+# Diagnoses Prediction - TUI: Beta, Threshold:0.9, CCI Only, Number of Epochs:5000, kFolds:1 RUN 1 - OLD RESULT
+Train Epoch: 4999 [9000/9742 (92%)]	Loss: 
+tensor(0.0968, device='cuda:0')
+Train Epoch: 4999 [9200/9742 (94%)]	Loss: 
+tensor(0.1023, device='cuda:0')
+Train Epoch: 4999 [9400/9742 (96%)]	Loss: 
+tensor(0.0973, device='cuda:0')
+Train Epoch: 4999 [9600/9742 (98%)]	Loss: 
+tensor(0.0930, device='cuda:0')
+/home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/PyTorch_scripts/diagnoses_prediction/02_FFN_diagprediction.py:223: UserWarning: volatile was removed and now has no effect. Use `with torch.no_grad():` instead.
+  data, target = Variable(data, volatile=True), Variable(target, volatile=True)
+Scores for each fold:
+Precision: [[0.7520525451559934, 0.6822660098522167, 0.6319102353585112]]
+Recall: [[0.39069086232764166, 0.5774808887618775, 0.6891833964420947]]
+AUROC: [0.9113469880422574]
+Average scores:
+Precision@1: 0.7520525451559934
+Precision@2: 0.6822660098522167
+Precision@3: 0.6319102353585112
+Recall@10: 0.39069086232764166
+Recall@20: 0.5774808887618775
+Recall@30: 0.6891833964420947
+AUROC: 0.9113469880422574
+Total Parameters: 235330269
 ---------------------FFN CUI + CCS ------------------------------
 # Diagnoses Prediction - TUI: Beta, Threshold:0.9, CUI+CCS, Number of Epochs:5000, kFolds:5  
 python 02_FFN_diagprediction.py --inputdata=diag_prepared_data_beta_09.npz --nEpochs=5000 --kFold=5 --withCCS=1
@@ -407,9 +407,42 @@ R@ 30 = 0.55556354226567
 ROC Average Score: 0.8619478409377244
 
 --------------Additional Result: LSTM CUI + CCS----------------------
-# LSTM Training Run 1 - TUI: Beta, Threshold:0.9, CUI Only, Number of Epochs:1500, kFolds:1 RUN 1 --- Produces model_ouput.pt, X-test.data, and Y-test.data
+# LSTM Run 1 - TUI: Beta, Threshold:0.9, CUI Only, Number of Epochs:1500, kFolds:1 RUN 1 --- Produces model_ouput.pt, X-test.data, and Y-test.data
 time python 02_LSTM_train_GPU.py --inputdata=diag_prepared_data_beta_09.npz --nEpochs=1500
 
+TRAINING 
+Train Epoch: 1499 [6500/6583 (99%)]	Loss: 
+tensor(0.0055, device='cuda:0')
+Train Epoch: 1499 [6520/6583 (99%)]	Loss: 
+tensor(0.0039, device='cuda:0')
+Train Epoch: 1499 [6540/6583 (99%)]	Loss: 
+tensor(0.0029, device='cuda:0')
+Train Epoch: 1499 [6560/6583 (100%)]	Loss: 
+tensor(0.0037, device='cuda:0')
+
+real	113m38.263s
+user	112m13.828s
+sys	0m37.522s
+
+TESTING 
+time python 03_LSTM_test.py --Xinputdata=X-test.data --Yinputdata=Y-test.data --inputModel=model_output.pt
+
+X-test.data --Yinputdata=Y-test.data --inputModel=model_output.pt
+Dataset with : 731 patients. Y: 731
+Each patient has : 41 admissions. Y: 41
+X_dataset_shape= torch.Size([731, 41, 23263])
+Y_dataset_shape= torch.Size([731, 41, 269])
+P@ 1 = 0.5519650655021834
+P@ 2 = 0.5135371179039301
+P@ 3 = 0.4759825327510917
+R@ 10 = 0.29482864137086906
+R@ 20 = 0.4563953488372093
+R@ 30 = 0.5693084455324358
+ROC Average Score: 0.8643254244939583
+
+real	0m29.291s
+user	1m50.568s
+sys	0m15.757s
 
 
 -----------------------------------------------------MORTALITY PREDICTION-------------------------------------------------------------------------------
