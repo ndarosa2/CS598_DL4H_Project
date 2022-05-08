@@ -521,6 +521,23 @@ sys	0m24.883s
 # GRU - TUI: Beta, Threshold:0.9, CCS Only, Number of Epochs:1500, kFolds:5 RUN 1 - all default parameters
 time python 02_GRU_mortality_CCS_only.py --inputdata=mort_prepared_data_beta_09.npz --inputdata2=mort_prepared_data_deathTime_beta_09.npz --nEpochs=1500 --kFold=5 --withCCS=0
 
+Train Epoch: 1499 [1060/1137 (93%)]	Loss: 
+tensor(4.2424e-08, device='cuda:0')
+Train Epoch: 1499 [1080/1137 (95%)]	Loss: 
+tensor(2.4660e-08, device='cuda:0')
+Train Epoch: 1499 [1100/1137 (96%)]	Loss: 
+tensor(4.7099e-08, device='cuda:0')
+Train Epoch: 1499 [1120/1137 (98%)]	Loss: 
+tensor(1.6011e-08, device='cuda:0')
+Training done - deleting variables and starting test
+ROC Average Score: 0.8032868347271958
+AUC_scores:  [0.7822098894268766, 0.8253843883569618, 0.7916295468874208, 0.79130625, 0.8032868347271958]
+Mean:  0.798763381879691
+Total Number of Parameters: 270603
+
+real	23m14.027s
+user	23m2.139s
+sys	0m16.100s
 
 
 -----------------------------------------------------------READMISSION PREDICTION-------------------------------------------------------------------
