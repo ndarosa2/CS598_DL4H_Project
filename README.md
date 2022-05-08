@@ -8,7 +8,9 @@ Contents
  * Dependencies
  * Data Download Instructions
  * Data Preprocessing Instructions
- * Model Training and Evaluation Instructions
+ * Model Training and Evaluation Instructions - Diagnoses Prediction
+ * Model Training and Evaluation Instructions - Mortality Prediction
+ * Model Training and Evaluation Instructions - Readmission Prediction
  * Results
  * References
 
@@ -50,7 +52,7 @@ Data Download Steps
 
 Data Preprocessing Instructions 
 ------------
-The original paper's GitHub has a that README.md provides data processing reproduction steps; however, more detailed steps along with possible necessary troubleshooting is provided below: 
+The original paper's GitHub has a that README.md provides data processing reproduction steps; however, more detailed steps along with possible necessary troubleshooting are provided below: 
 
  1. Download this GitHub's repository. Other than a couple files, this repository hosts the same files found in the original paper's repository (patient_trajectory_prediction), but with minor script modifications and with some files moved to a different folder. 
  	* Modifications included: added lines to calculate total parameters, added with.torch_nograd() to some files to save memory and increase speed, and changed torch.cuda.set_device(1) to torch.cuda.set_device(0) since only tested with one active GPU. 
@@ -112,7 +114,7 @@ The original paper's GitHub has a that README.md provides data processing reprod
  
 Model Training and Evaluation Instructions - Diagnoses Prediction
 ------------
-The original paper's GitHub has a that README.md provides model training and evaluation reproduction steps for diagnoses prediction; however, more detailed steps is provided below: 
+The original paper's GitHub has a that README.md provides model training and evaluation reproduction steps for diagnoses prediction; however, more detailed steps are provided below: 
 
 1. Using a feed forward network (FFN), train and evaluate the models for diagnoses prediction only using the CUI datasets:
 	*  time python 02_FFN_diagprediction.py --inputdata=prepared_data.npz --nEpochs=5000 --kFold=5 withCCS=0
@@ -136,7 +138,7 @@ The original paper's GitHub has a that README.md provides model training and eva
  
 Model Training and Evaluation Instructions - Mortality Prediction
 ------------
-The original paper's GitHub has a that README.md provides model training and evaluation reproduction steps for mortality prediction; however, more detailed steps is provided below: 
+The original paper's GitHub has a that README.md provides model training and evaluation reproduction steps for mortality prediction; however, more detailed steps are provided below: 
 
 Note: All runs for mortality prediction are done using Dataset D. 
 1. Using the FFN architecture, train and evaluate the models for mortality prediction only using the CUI datasets:
@@ -144,12 +146,25 @@ Note: All runs for mortality prediction are done using Dataset D.
 2.  Using the GRU architecture, train and evaluate the models for diagnoses prediction using CUI data only:
 	* time python 02_GRU_mortality.py --inputdata=prepared_data.npz --inputdata2=prepared_data_deathTime.npz --nEpochs=1500 --kFold=5 --withCCS=0
 	
-3.  Using the GRU architecture, train and evaluate the models for diagnoses prediction using CCS data only:
+3.  Using the GRU architecture, train and evaluate the models for mortality prediction using CCS data only:
 	* time python 02_GRU_mortality_CCS_only.py --inputdata=prepared_data.npz --inputdata2=prepared_data_deathTime.npz --nEpochs=1500 --kFold=5 --withCCS=1
 
-4.  Using the GRU architecture, train and evaluate the models for diagnoses prediction using both CUI and CCS data:
+4.  Using the GRU architecture, train and evaluate the models for mortality prediction using both CUI and CCS data:
 	* time python 02_GRU_mortality.py --inputdata=prepared_data.npz --inputdata2=prepared_data_deathTime.npz --nEpochs=1500 --kFold=5 --withCCS=1
 
+ 
+Model Training and Evaluation Instructions - Readmission Prediction
+------------
+The original paper's GitHub has a that README.md provides model training and evaluation reproduction steps for readmission prediction; however, more detailed steps are provided below: 
+
+Note: All runs for mortality prediction are done using Dataset D.
+
+1. Using the FFN architecture, train and evaluate the models for readmission prediction only using the CUI data:
+	* time python 02_FFN_readmission.py --inputdata=prepared_data.npz --withCCS=0
+2. Using the FFN architecture, train and evaluate the models for readmission prediction only using the CCS data:
+	* time python 02_FFN_readmission_CCS_only.py --inputdata=prepared_data.npz --withCCS=1
+3. 1. Using the FFN architecture, train and evaluate the models for readmission prediction only using the CUI data:
+	* time python 02_FFN_readmission.py --inputdata=prepared_data.npz --withCCS=0
 References
 ------------
 1. Zaghir, Jamil & Rodrigues Jr, Jose & Goeuriot, Lorraine & Amer-Yahia, Sihem. (2021). Real-world Patient Trajectory Prediction from Clinical Notes Using Artificial Neural Networks and UMLS-Based Extraction of Concepts. Journal of Healthcare Informatics Research. 5. 10.1007/s41666-021-00100-z. 
