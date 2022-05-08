@@ -5,7 +5,10 @@ Contents
 ---------------------
  * Group Members
  * Selected Paper
- * Reproduction Steps
+ * Dependencies
+ * Data Download Instructions
+ * Data Preprocessing Instructions
+ * Training and Evaluation Instructions
  * Results
  * References
 
@@ -23,25 +26,29 @@ Zaghir, Jamil & Rodrigues Jr, Jose & Goeuriot, Lorraine & Amer-Yahia, Sihem. (20
 
 GitHub link: https://github.com/JamilProg/patient_trajectory_prediction
 
-Reproduction Steps
+Dependencies
 ------------
 
+* Python 3.7
+* Cuda version 10.2
+ 	* If Cuda is not used to accelerate training, then the Pytorch scripts need to be edited to not use a GPU; however, training solely on CPU is not feasible due to the computation time. 
+* cuda / cudatoolkit 11.3.1
+* dill 0.3.4
+* matplotlib 3.5.1
+* nltk 3.7
+* numpy 1.19.2
+* PyTorch version 1.5.0
+* scikit-learn 1.0.2
+* scipy 1.6.2
+* spaCy 3.2.1
+	
+Data Download Steps
+------------	
+
+
+Reproduction Steps
+------------
 The original paper's README.md provides reproduction steps; however, more detailed steps along with possible necesary troubleshooting and additional needed packages that are not listed in the original paper's README.md are provided below: 
- * Dependencies
- 	* Python 3.7
- 	* Cuda version 10.2
- 		* If Cuda is not used to accelerate training, then the Pytorch scripts need to be edited to not use a GPU; however, training solely on CPU is not feasible due to the computation time. 
- 	* cuda / cudatoolkit 11.3.1
- 	* dill 0.3.4
- 	* matplotlib 3.5.1
-	* nltk 3.7
- 	* numpy 1.19.2
-	* PyTorch version 1.5.0
-	* scikit-learn 1.0.2
-	* scipy 1.6.2
-	* spaCy 3.2.1
-
-
  * Data Processing Steps
  	1. Download the original paper's repository [1]
  	2. Apply for UMLS license through your research organization. Typically takes a couple business days for approval [2].
