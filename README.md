@@ -68,21 +68,27 @@ The original paper's GitHub has a that README.md provides data processing reprod
 		* If on Linux, need to run the command ./run_linux.sh	
 		* Select Level 0 for Subset
 
-5. Install QuickUMLS
-	* Follow the directions provided at QuickUMLS GitHub https://github.com/Georgetown-IR-Lab/QuickUMLS
+5. Install QuickUMLS. After installation, there should now be a QuickUMLS folder with the subfolders cui-semtypes.db, umls-sumstring.db, language.flag, and lowercase.flag
+	* Follow the directions provided at QuickUMLS GitHub https://github.com/Georgetown-IR-Lab/QuickUMLS [5]
+	* Note that MRCONSO.RRF and MRSTY.RRF are in the META folder under 2021AB 
+	* Example install commandL
+		* python -m quickumls.install <umls_installation_path> <destination_path> 	
+6. Copy the data folder generated in step 3 and the QuickUMLS folder generated in Step 4 into the patient_trajectory_prediction/concept_annotation folder.
+7. Change directory to the concept_annotation 
+8. Run the quickUMLS_getCUI.py for each dataset parameters. This script generates approximately 70 .csv.output files in the outputchunkssmall folder.  
+	* The parameters are:
+		* --t : Float that is the QuickUMLS similarity Threshold. It is between 0 and 1. Default is 0.9. 
+    		* --TUI : String that represents the TUI List filter. It is either "Alpha" or "Beta". Default is Beta.
+    	* Example command:
+    		* python quickUMLS_getCUI.py --t=0.9 --TUI=Alpha
+    			* The generation of this dataset took approximately 8 hours using a 32 thread CPU and required around 70GB of RAM. 
+9. Since quickUMLS_getCUI.py generated about 70 .csv.output files in the outputchunkssmall folder, change directory to data/outputchunkssmall and run the following command to concatenate the files and produce concatenated_output.csv. 
+	* cat 1.csv.output 2.csv.output 3.csv.output 4.csv.output 5.csv.output 6.csv.output 7.csv.output 8.csv.output 9.csv.output 10.csv.output 11.csv.output 12.csv.output 13.csv.output 14.csv.output 15.csv.output 16.csv.output 17.csv.output 18.csv.output 19.csv.output 20.csv.output 21.csv.output 22.csv.output 23.csv.output 24.csv.output 25.csv.output 26.csv.output 27.csv.output 28.csv.output 29.csv.output 30.csv.output 31.csv.output 32.csv.output 33.csv.output 34.csv.output 35.csv.output 36.csv.output 37.csv.output 38.csv.output 39.csv.output 40.csv.output 41.csv.output 42.csv.output 43.csv.output 44.csv.output 45.csv.output 46.csv.output 47.csv.output 48.csv.output 49.csv.output 50.csv.output 51.csv.output 52.csv.output 53.csv.output 54.csv.output 55.csv.output 56.csv.output 57.csv.output 58.csv.output 59.csv.output 60.csv.output 61.csv.output 62.csv.output 63.csv.output 64.csv.output 65.csv.output 66.csv.output 67.csv.output 68.csv.output 69.csv.output 70.csv.output 71.csv.output > concatenated_output.csv
+
 
 
 cd /home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/concept_annotation/QuickUMLS-master
 
-python setup.py install
-
-Create a QuickUMLS installation 
--MRCONSO.RRF and MRSTY.RRF are in the META folder under 2021AB 
--python -m quickumls.install <umls_installation_path> <destination_path>
--With actual file paths 
-python -m quickumls.install /home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthpython 02_FFNcare/Project/Paper_111/patient_trajectory_prediction-master/concept_annotation/2021AB/META /home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/concept_annotation/testInstall
-
-cd /home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/concept_annotation
 
 python quickUMLS_getCUI.py --t=0.9 --TUI=Alpha
 
