@@ -16,7 +16,7 @@ user	57675m36.341s
 sys	115m9.943s
 
 -------------------------------------------------------------DIAGNOSES PREDICTION-----------------------------------------------------------
-----------------------FFN CUI Only------------------------------
+----------------------FFN CUI Only Dataset C------------------------------
 
 # Diagnoses Prediction - TUI: Alpha, Threshold:0.9, CUI Only, Number of Epochs:5000, kFolds:5  
 time python 02_FFN_diagprediction.py --inputdata=diag_prepared_data_alpha_09.npz --nEpochs=5000 --kFold=5
@@ -72,7 +72,7 @@ Recall@10: 0.38278037714447755
 Recall@20: 0.5653268112859776
 Recall@30: 0.6794980859208847
 
-
+----------------------FFN CUI Only Dataset D------------------------------
 # Diagnoses Prediction - TUI: Beta, Threshold:0.9, CUI Only, Number of Epochs:5000, kFolds:5  
 time python 02_FFN_diagprediction.py --inputdata=diag_prepared_data_beta_09.npz --nEpochs=5000 --kFold=5
 Train Epoch: 4999 [9000/9743 (92%)]	Loss: 
@@ -127,7 +127,7 @@ Recall@20: 0.5774808887618775
 Recall@30: 0.6891833964420947
 AUROC: 0.9113469880422574
 Total Parameters: 235330269
----------------------FFN CUI + CCS ------------------------------
+---------------------FFN CUI + CCS Dataset D------------------------------
 # Diagnoses Prediction - TUI: Beta, Threshold:0.9, CUI+CCS, Number of Epochs:5000, kFolds:5  
 python 02_FFN_diagprediction.py --inputdata=diag_prepared_data_beta_09.npz --nEpochs=5000 --kFold=5 --withCCS=1
 
@@ -155,7 +155,7 @@ Recall@30: 0.7062955259518934
 AUROC: 0.9161035637835443
 238020269
 
----------------------FFN CCS Only ------------------------------
+---------------------FFN CCS Only Dataset D------------------------------
 # Diagnoses Prediction - TUI: Beta, Threshold:0.9, CCS Only, Number of Epochs:5000, kFolds:5  
 time python 02_FFN_diagprediction_CCS_Only.py --inputdata=diag_prepared_data_beta_09.npz --nEpochs=5000 --kFold=5 --withCCS=1
 
@@ -216,6 +216,10 @@ Total Number of Parameters: 1078269
 real	18m55.843s
 user	18m45.794s
 sys	0m13.271s
+
+---------------------FFN CUI Only Dataset A------------------------------
+# Diagnoses Prediction - TUI: Alpha, Threshold:0.7, CUI Only, Number of Epochs:5000, kFolds:1  
+time python 02_FFN_diagprediction.py --inputdata=diag_prepared_data_alpha_07.npz --nEpochs=5000 --kFold=1
 
 
 --------------GRU CUI Only----------------------
