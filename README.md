@@ -26,7 +26,7 @@ Reproduction Steps
 ------------
 
 The original paper's README.md provides reproduction steps; however, more detailed steps along with possible necesary troubleshooting and additional needed packages that are not listed in the original paper's README.md are provided below: 
- * Environment
+ * Dependencies
  	* Python 3.7
  	* Cuda version 10.2
  		* If Cuda is not used to accelerate training, then the Pytorch scripts need to be edited.
