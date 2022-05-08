@@ -55,9 +55,11 @@ The original paper's GitHub has a that README.md provides data processing reprod
  2. Download the QuickUMLS repository (QuickUMLS) [5]
  3. In patient_trajectory_prediction, do the following
  	* Copy MIMIC's NOTEEVENTS.csv into the data_cleaning folder
- 	* Change directory to data_cleaning and 
-	* Run noteEvents_preproc.py. 
+ 	* Change directory to data_cleaning 
+	* Run noteEvents_preproc.py. This will generate output.csv
 		* python noteEvents_preproc.py NOTEEVENTS.csv
+	* Run python MIMIC_smart_splitter.py 
+		* python MIMIC_smart_splitter.py output.csv
  	
 
 Copy MIMIC's NOTEEVENTS.csv into data_cleaning folder
