@@ -175,6 +175,9 @@ Raw results and completion times are provided in the text file Raw Results.
 
 Provided below are tables summarizing the reproduction results. Discussions of these results can be found in the associated reproduction paper.
 
+
+![image](https://user-images.githubusercontent.com/90882619/167284776-e0b52db9-bb89-4454-bf62-0dd411a00ed6.png)
+
 \begin{table}\scriptsize
 \caption{The dataset
 configurations used in the original and reproduction
