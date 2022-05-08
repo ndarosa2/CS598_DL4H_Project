@@ -29,7 +29,7 @@ The original paper's README.md provides reproduction steps; however, more detail
  * Dependencies
  	* Python 3.7
  	* Cuda version 10.2
- 		* If Cuda is not used to accelerate training, then the Pytorch scripts need to be edited.
+ 		* If Cuda is not used to accelerate training, then the Pytorch scripts need to be edited to not use a GPU; however, training solely on CPU is not feasible due to the computation time. 
  	* PyTorch version 1.5.0
 	* spaCy
 	* dill
@@ -38,12 +38,12 @@ The original paper's README.md provides reproduction steps; however, more detail
 	* scikitlearn
 	* matplotlib
 
- * Steps
+ * Data Processing Steps
  	1. Download the original paper's repository [1]
  	2. Apply for UMLS license through your research organization. Typically takes a couple business days for approval [2].
- 	3. Get access to, download, and uncompress the MIMIC-III dataset [4].
- 	4. Download the QuickUMLS repository [5]
- 	5. Copy MIMIC's NOTEEVENTS.csv into data_cleaning folder
+ 	3. Get access to, download, and uncompress the MIMIC-III dataset [4]. Access can be granted through Physionet. 
+ 	5. Download the QuickUMLS repository [5]
+ 	6. Copy MIMIC's NOTEEVENTS.csv into data_cleaning folder
 	6. Run noteEvents_preproc.py
 	* Example commands: 
 		* cd /home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/data_cleaning	
