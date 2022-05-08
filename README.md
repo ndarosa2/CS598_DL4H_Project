@@ -45,15 +45,14 @@ Dependencies
 Data Download Steps
 ------------	
 
+ 1. Apply for a UMLS license through your research organization. Access is granted by the National Library of Medicine. Typically takes a couple business days for approval. Once access has been granted, download the full release of UMLS (5.1 GB compressed) [2].
+ 2. Get access to, download, and uncompress the MIMIC-III dataset (6.6 GB compressed). Access can be granted through Physionet [4]. 
 
-Reproduction Steps
+Data Preprocessing Instructions 
 ------------
-The original paper's README.md provides reproduction steps; however, more detailed steps along with possible necesary troubleshooting and additional needed packages that are not listed in the original paper's README.md are provided below: 
- * Data Processing Steps
- 	1. Download the original paper's repository [1]
- 	2. Apply for UMLS license through your research organization. Typically takes a couple business days for approval [2].
- 	3. Get access to, download, and uncompress the MIMIC-III dataset [4]. Access can be granted through Physionet. 
- 	5. Download the QuickUMLS repository [5]
+The original paper's GitHub has a that README.md provides data processing reproduction steps; however, more detailed steps along with possible necesary troubleshooting is provided below: 
+ 1. Download the original paper's repository [1]
+ 2. Download the QuickUMLS repository [5]
  	6. Copy MIMIC's NOTEEVENTS.csv into data_cleaning folder
 	6. Run noteEvents_preproc.py
 	* Example commands: 
