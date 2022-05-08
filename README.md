@@ -114,10 +114,41 @@ Model Training and Evaluation Instructions - Diagnoses Prediction
 ------------
 The original paper's GitHub has a that README.md provides model training and evaluation reproduction steps for diagnoses prediction; however, more detailed steps is provided below: 
 
-1. Using a feed forward network, train and evaluate the models for diagnoses prediction only using the CUI datasets
-	*  
-2 Run the model for diagnoses prediction using a feed forward network
-python 02_FFN_diagprediction.py --inputdata=prepared_data.npz --nEpochs=50 --kFold=1 
+1. Using a feed forward network (FFN), train and evaluate the models for diagnoses prediction only using the CUI datasets:
+	*  time python 02_FFN_diagprediction.py --inputdata=prepared_data.npz --nEpochs=5000 --kFold=5 withCCS=0
+	*  Repeat command for Datasets A,B,C,D
+2. Using a feed forward network (FFN) architecture, train and evaluate the models for diagnoses prediction only using the CCS datasets:
+	*  time python 02_FFN_diagprediction_CCS_only.py --inputdata=prepared_data.npz --nEpochs=5000 --kFold=5 withCCS=1
+3. Using a feed forward network (FFN), train and evaluate the models for diagnoses prediction using both CUI data and the CCS data:
+	*  time python 02_FFN_diagprediction.py --inputdata=prepared_data.npz --nEpochs=5000 --kFold=5 withCCS=1
+
+4.  Using the gated recurrent unit (GRU) architecture, train and evaluate the models for diagnoses prediction using CUI data only:
+	*  time python 02_GRU_train_GPU.py --inputdata=prepared_data.npz --nEpochs=1500 --withCCS=0
+	*  time python 03_GRU_test.py --Xinputdata=X-test.data --Yinputdata=Y-test.data --inputModel=model_output.pt
+5.  Using the gated recurrent unit (GRU) architecture, train and evaluate the models for diagnoses prediction using both CUI and CCS data:
+	*  time python 02_GRU_train_GPU.py --inputdata=prepared_data.npz --nEpochs=1500 --withCCS=1
+	*  time python 03_GRU_test.py --Xinputdata=X-test.data --Yinputdata=Y-test.data --inputModel=model_output.pt
+
+6. Using the long short term memory (LSTM) architecture, train and evaluate the models for diagnoses prediction using CUI data only:
+	*  time python 02_LSTM_train_GPU.py --inputdata=prepared_data.npz --nEpochs=1500 --withCCS=0
+	*  time python 03_LSTM_test.py --Xinputdata=X-test.data --Yinputdata=Y-test.data --inputModel=model_output.pt
+
+ 
+Model Training and Evaluation Instructions - Mortality Prediction
+------------
+The original paper's GitHub has a that README.md provides model training and evaluation reproduction steps for mortality prediction; however, more detailed steps is provided below: 
+
+Note: All runs for mortality prediction are done using Dataset D. 
+1. Using the FFN architecture, train and evaluate the models for mortality prediction only using the CUI datasets:
+	* time python 02_FFN_mortality.py --inputdata=mort_prepared_data_beta_09.npz --inputdata2=mort_prepared_data_deathTime_beta_09.npz --nEpochs=5000 --kFold=5 --lr=0.01 --withCCS=1
+2.  Using the GRU architecture, train and evaluate the models for diagnoses prediction using CUI data only:
+	* time python 02_GRU_mortality.py --inputdata=prepared_data.npz --inputdata2=prepared_data_deathTime.npz --nEpochs=1500 --kFold=5 --withCCS=0
+	
+3.  Using the GRU architecture, train and evaluate the models for diagnoses prediction using CCS data only:
+	* time python 02_GRU_mortality_CCS_only.py --inputdata=prepared_data.npz --inputdata2=prepared_data_deathTime.npz --nEpochs=1500 --kFold=5 --withCCS=1
+
+4.  Using the GRU architecture, train and evaluate the models for diagnoses prediction using both CUI and CCS data:
+	* time python 02_GRU_mortality.py --inputdata=prepared_data.npz --inputdata2=prepared_data_deathTime.npz --nEpochs=1500 --kFold=5 --withCCS=1
 
 References
 ------------
