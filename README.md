@@ -18,7 +18,7 @@ Selected Paper
 
 The research paper selected for reproduction was:  
 
-Zhang, D., Yin, C., Zeng, J. et al. Combining structured and unstructured data for predictive models: a deep learning approach. BMC Med Inform Decis Mak 20, 280 (2020). https://doi.org/10.1186/s12911-020-01297-6 
+Zaghir, Jamil & Rodrigues Jr, Jose & Goeuriot, Lorraine & Amer-Yahia, Sihem. (2021). Real-world Patient Trajectory Prediction from Clinical Notes Using Artificial Neural Networks and UMLS-Based Extraction of Concepts. Journal of Healthcare Informatics Research. 5. 10.1007/s41666-021-00100-z. 
 
 Github link: https://github.com/JamilProg/patient_trajectory_prediction
 
