@@ -64,10 +64,9 @@ The original paper's GitHub has a that README.md provides data processing reprod
 		*  According to the original paper's GitHub it takes about 1 hour to finish, but in reproduction testing it took approximately 20 minutes.
 4. Install UMLS
 	* Unzip UMLS folder umls-2021AB-full
-	* Follow the directions provided at https://www.nlm.nih.gov/research/umls/implementation_resources/metamorphosys/help.html
+	* Follow the directions provided at https://www.nlm.nih.gov/research/umls/implementation_resources/metamorphosys/help.html [2]
 		* If on Linux, need to run the command ./run_linux.sh	
-	* Select Level 0 for Subset
-	* cd example/path/umls-2021AB-full/2021AB-full/mmsys
+		* Select Level 0 for Subset
 
 5. Install QuickUMLS
 	* Follow the directions provided at QuickUMLS GitHub https://github.com/Georgetown-IR-Lab/QuickUMLS
