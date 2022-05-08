@@ -51,12 +51,12 @@ Data Download Steps
 Data Preprocessing Instructions 
 ------------
 The original paper's GitHub has a that README.md provides data processing reproduction steps; however, more detailed steps along with possible necesary troubleshooting is provided below: 
- 1. Download the original paper's repository [1]
- 2. Download the QuickUMLS repository [5]
- 	6. Copy MIMIC's NOTEEVENTS.csv into data_cleaning folder
-	6. Run noteEvents_preproc.py
-	* Example commands: 
-		* cd /home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/data_cleaning	
+ 1. Download the original paper's repository (patient_trajectory_prediction) [1]
+ 2. Download the QuickUMLS repository (QuickUMLS) [5]
+ 3. In patient_trajectory_prediction, do the following
+ 	a. Copy MIMIC's NOTEEVENTS.csv into the data_cleaning folder
+ 	b. Change directory to data_cleaning and 
+	c. Run noteEvents_preproc.py. 
 		* python noteEvents_preproc.py NOTEEVENTS.csv
  	
 
