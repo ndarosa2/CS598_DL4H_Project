@@ -93,11 +93,14 @@ The original paper's GitHub has a that README.md provides data processing reprod
 
 12. Change directory to patient_trajectory_prediction-master/PyTorch_scripts/diagnoses_prediction and run the following command to prepare the data for diagnoses prediction:
 	* python 01_data_preparation.py --admissions_file ADMISSIONS.csv --diagnoses_file DIAGNOSES_ICD.csv --notes_file post_processed_output.csv
-	* This command created prepared_data.npz which is the data used in model training and testing. 
-13. Likewise change directory to patient_trajectory_prediction-master/PyTorch_scripts/mortality_prediction and run the following command to prepare the data for mortality prediction:
-	* python 01_data_preparation.py --admissions_file ADMISSIONS.csv --diagnoses_file DIAGNOSES_ICD.csv --notes_file post_processed_output_alpha_09.csv
-	* This command created prepared_data.npz which is the data used in model training and testing. 
-That creates prepared_data.npz 
+	* This command creates prepared_data.npz which is the data used in model training and testing. 
+13. Change directory to patient_trajectory_prediction-master/PyTorch_scripts/mortality_prediction and run the following command to prepare the data for mortality prediction:
+	* python 01_data_prep_mortality.py --admissions_file ADMISSIONS.csv --diagnoses_file DIAGNOSES_ICD.csv --notes_file post_processed_output_beta_09.csv
+	* This command creates prepared_data.npz and prepared_data_deathTime.npz which are used in model training and testing. 
+14. Change directory to patient_trajectory_prediction-master/PyTorch_scripts/readmission_prediction and run the following command to prepare the data for readmission prediction:
+	* python 01_data_prep_readmission.py --admissions_file ADMISSIONS.csv --diagnoses_file DIAGNOSES_ICD.csv --notes_file post_processed_output.csv
+	* This command creates prepared_data.npz which is the data used in model training and testing. 
+
 
 Run the model for diagnoses prediction using a feed forward network
 python 02_FFN_diagprediction.py --inputdata=prepared_data.npz --nEpochs=50 --kFold=1 
