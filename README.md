@@ -40,7 +40,7 @@ Dependencies
 * PyTorch version 1.5.0
 * scikit-learn 1.0.2
 * scipy 1.6.2
-* spaCy 3.2.1
+* spaCy 3.2.1 (needed for QuickUMLS)
 	
 Data Download Steps
 ------------	
@@ -62,20 +62,16 @@ The original paper's GitHub has a that README.md provides data processing reprod
 	* Run python MIMIC_smart_splitter.py. Splits the preprocessed text into files of 50 Mb and puts those file in a new folder called data. 
 		* python MIMIC_smart_splitter.py output.csv
 		*  According to the original paper's GitHub it takes about 1 hour to finish, but in reproduction testing it took approximately 20 minutes.
- 	
-Unzip UMLS folder umls-2021AB-full
+4. Install UMLS
+	* Unzip UMLS folder umls-2021AB-full
+	* Follow the directions provided at https://www.nlm.nih.gov/research/umls/implementation_resources/metamorphosys/help.html
+		* If on Linux, need to run the command ./run_linux.sh	
+	* Select Level 0 for Subset
+	* cd example/path/umls-2021AB-full/2021AB-full/mmsys
 
-Navigate to umls-2021AB-full/2021AB-full and unzip mmsys.zip
+5. Install QuickUMLS
+	* Follow the directions provided at QuickUMLS GitHub https://github.com/Georgetown-IR-Lab/QuickUMLS
 
-cd /home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/umls-2021AB-full/2021AB-full/mmsys
-
-Unzip the files into the same directory https://www.nlm.nih.gov/research/umls/implementation_resources/metamorphosys/help.html
-
-cd /home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/umls-2021AB-full/2021AB-full
-
-./run_linux.sh
-
-Selected Level 0 for subset
 
 cd /home/nick/Documents/UIUC/CS_598_Deep_Learning_for_Healthcare/Project/Paper_111/patient_trajectory_prediction-master/concept_annotation/QuickUMLS-master
 
@@ -118,7 +114,7 @@ References
 1. Zaghir, Jamil & Rodrigues Jr, Jose & Goeuriot, Lorraine & Amer-Yahia, Sihem. (2021). Real-world Patient Trajectory Prediction from Clinical Notes Using Artificial Neural Networks and UMLS-Based Extraction of Concepts. Journal of Healthcare Informatics Research. 5. 10.1007/s41666-021-00100-z. 
 GitHub link: https://github.com/JamilProg/patient_trajectory_prediction
 
-2. Unified medical language system (UMLS). https://www.nlm.nih.gov/research/umls/index.html, accessed April, 2022
+2. Unified medical language system (UMLS). https://www.nlm.nih.gov/research/umls/index.html, accessed April, 2022. Installation instructions https://www.nlm.nih.gov/research/umls/implementation_resources/metamorphosys/help.html
 
 3. Metathesaurus’s unique identifiers. https://www.nlm.nih.gov/research/umls/new users/online learning/Meta 005.html, accessed April, 2022
 
