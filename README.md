@@ -92,7 +92,7 @@ The original paper's GitHub has a that README.md provides data processing reprod
 11. Copy post_process_output.csv,ADMISSIONS.csv (MIMIC-III file), and DIAGNOSES_ICD.csv (MIMIC-III file) into patient_trajectory_prediction/Pytorch_scripts/diagnoses_prediction, patient_trajectory_prediction/Pytorch_scripts/mortality_prediction, and patient_trajectory_prediction/Pytorch_scripts/readmission_prediction
 
 12. Change directory to patient_trajectory_prediction-master/PyTorch_scripts/diagnoses_prediction and run the following command to prepare the data for diagnoses prediction:
-	* python 01_data_preparation.py --admissions_file ADMISSIONS.csv --diagnoses_file DIAGNOSES_ICD.csv --notes_file post_processed_output_alpha_09.csv
+	* python 01_data_preparation.py --admissions_file ADMISSIONS.csv --diagnoses_file DIAGNOSES_ICD.csv --notes_file post_processed_output.csv
 	* This command created prepared_data.npz which is the data used in model training and testing. 
 13. Likewise change directory to patient_trajectory_prediction-master/PyTorch_scripts/mortality_prediction and run the following command to prepare the data for mortality prediction:
 	* python 01_data_preparation.py --admissions_file ADMISSIONS.csv --diagnoses_file DIAGNOSES_ICD.csv --notes_file post_processed_output_alpha_09.csv
