@@ -180,10 +180,16 @@ and reproduction experiments.
 ![image](https://user-images.githubusercontent.com/90882619/167284776-e0b52db9-bb89-4454-bf62-0dd411a00ed6.png)
 
 Table 2: Diagnoses prediction metrics Precision@, Re-call@, and AUC-ROC computed over the four dataset configurations using a Feed-Forward network (5000 epochs, 5 fold cross validation). Reproduction results are compared to original paper results.
-![image](https://user-images.githubusercontent.com/90882619/167320402-4a3ee975-6dff-4405-99a7-a7455e7b23ae.png)
+![image](https://user-images.githubusercontent.com/90882619/167320458-e9de2eed-b142-431a-b682-e8a9fa1faa70.png)
 
 Table 3: Metric comparison for inputs CUI codes only, CCS codes only, and CUI codes combined with CCS codes for diagnoses  prediction using the FFN model with default hyperparameters (e.g. 5,000 epochs, hidden size of 10,000). Since Dataset D performed the best in previous experiments, it was used for all runs shown.
-![image](https://user-images.githubusercontent.com/90882619/167320319-4b54a7ba-f927-4ace-b20c-329642f34906.png)
+![image](https://user-images.githubusercontent.com/90882619/167320479-7eb8ef89-09c0-49c3-a56e-4ef489066a69.png)
+
+Table 4: Comparison of the two RNN architectures (LSTM and GRU) against the FFN architecture for diagnoses prediction. Since Dataset D performed the best in previous experiments it was used for all runs shown.
+![image](https://user-images.githubusercontent.com/90882619/167320511-aa3345b0-1390-41e4-8d27-e38f82620666.png)
+
+Table 5: Comparison of only using CUI codes are input to the models and only using CCS codes as input into the models. As in the original paper, note that only the best performing architecture (e.g. FFN) for each task (e.g. diagnoses prediction) is shown.
+![image](https://user-images.githubusercontent.com/90882619/167320537-9c86605a-fbbb-47a3-a81b-81b59c8ff7d7.png)
 
 References
 ------------
