@@ -57,6 +57,7 @@ The original paper's GitHub has a that README.md provides data processing reprod
  1. Download this GitHub's repository. Other than a couple files, this repository hosts the same files found in the original paper's repository (patient_trajectory_prediction), but with minor script modifications and with some files moved to a different folder. 
  	* Modifications included: added lines to calculate total parameters, added with.torch_nograd() to some files to save memory and increase speed, and changed torch.cuda.set_device(1) to torch.cuda.set_device(0) since only tested with one active GPU. 
  	*  All modifications to the Pytorch scripts contain a corresponding comment with the initials NJD.
+ 	*  Since the data is either derived from UMLS or MIMIC-III, it has been deleted and is not present in the GitHub repository. 
  	* Alternatively, download the original paper's repository (patient_trajectory_prediction) instead [1]
  3. Download the QuickUMLS repository (QuickUMLS) [5]
  4. In patient_trajectory_prediction, do the following
