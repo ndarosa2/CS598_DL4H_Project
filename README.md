@@ -197,6 +197,7 @@ Table 6: Summary of original and reproduction results for diagnoses, mortality, 
 ![image](https://user-images.githubusercontent.com/90882619/167320641-2dc5773d-1ec7-4e89-83bf-dfdad554acb0.png)
 
 Table 7: Comparison of Precision@1 results for diagnoses code prediction among competing configurations presented by Sushil et al. [6] .
+
 ![image](https://user-images.githubusercontent.com/90882619/167320645-b7363846-ada9-41a6-8fee-1ee95b84589c.png)
 
 References
